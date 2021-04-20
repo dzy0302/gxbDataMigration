@@ -390,6 +390,159 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+            if orgin[14] == '发冷':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_fl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            # if orgin[14] == '身冷':
+            #     try:
+            #         cur.execute(
+            #             'UPDATE record_gxb2 SET wh_sl = %s WHERE ID = %s;', (1, table_gxb_id))
+            #         conn.commit()
+            #     except Exception as ex:
+            #         logging.error('[更新异常]' + str(ex))
+            #         conn.rollback()
+            #         break
+            if orgin[14] == '手足不温':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_szbw = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '四肢不温':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_sizbw = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '身大寒':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_sdh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '头冷':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_tl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '背冷':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_bl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '心中寒':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_xzh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '腹冷':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_ful = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '胃中寒冷':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_wzhl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '胃怕凉':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_wpl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '腰冷':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_yl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '腰膝酸冷':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_yxsl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '腰以下发凉':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_yyxfl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '形寒肢冷':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_xhzl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '骨节寒冷':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_gjhl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '喜温':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wh_xw = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
