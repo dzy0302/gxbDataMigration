@@ -1707,7 +1707,43 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
-
+        if orgin[12] == '小便症状_尿次:':
+            if orgin[14] == '尿频':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET nc_np = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '夜尿多':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET nc_ynd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '遗尿':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET nc_yn = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '尿潴留':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET nc_nzl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
