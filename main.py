@@ -1278,6 +1278,142 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '睡眠症状_睡眠症状:':
+            if orgin[14] == '不易入眠':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_byrm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '不寐':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_bm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '不能卧':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_bnw = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '眠而不寐':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_mebm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '多梦':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_dm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '易醒':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_yx = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '醒后不能再寐':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_xhbnzm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '时寐时醒':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_smsx = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '夜卧不安':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_ywba = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '嗜睡':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_ss = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '食后困顿':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_shkd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '鼾眠':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_hm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '睡眠倒错':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_smdc = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '梦言症':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_myz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '梦游':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sm_my = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
