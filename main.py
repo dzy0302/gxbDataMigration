@@ -1578,6 +1578,106 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '大便症状_便感:':
+            if orgin[14] == '肛门灼热':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bg_gmzr = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '里急后重':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bg_ljhz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '排便不爽':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bg_pbbs = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '便意频频':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bg_bypp = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '大便干':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bg_dbg = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '大便不通':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bg_dbbt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '泻下不爽':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bg_xxbs = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '排便无力':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bg_pbwl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '泻下如注':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bg_xxrz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '大便失禁':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bg_dbsj = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '大便滑脱':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bg_dbht = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
