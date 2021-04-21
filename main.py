@@ -923,6 +923,143 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '渴饮症状_渴饮症状:':
+            if orgin[14] == '口干':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_kg = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '烦渴':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_fk = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口渴欲饮':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_kkyy = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '渴喜热饮':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_kxry = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口渴多饮':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_kkdy = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '渴喜冷饮':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_kxly = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口不渴饮':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_kbky = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '渴不欲饮':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_kbyy = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '渴不多饮':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_kbdy = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '不欲饮':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_byy = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '饮水多':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_ysd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '饮水则呛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_yszq = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '引入即吐':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_yrjt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '喜冷饮':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_xly = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '喜热饮':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ky_xry = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+
 
 
 
