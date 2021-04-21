@@ -1744,6 +1744,115 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '小便症状_尿感:':
+            if orgin[14] == '小便刺痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ng_xbct = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '小便灼热':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ng_xbzr = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '小便不利':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ng_xbbl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '小便不通':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ng_xbbt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '小便无力':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ng_xbwl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '小便失禁':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ng_xbsj = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '小便先少后多':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ng_xbxshd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '小便中断':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ng_xbzd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '尿急':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ng_nj = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '尿涩':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ng_ns = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '尿痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ng_nt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '尿后余沥':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ng_nhyl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
