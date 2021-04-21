@@ -1451,6 +1451,133 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '大便症状_便质:':
+            if orgin[14] == '完谷不化':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_wgbh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '溏结不调':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_tjbt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '便溏':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_bt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '大便不实':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_dbbs = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '大便变形':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_dbbx = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '大便质粘':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_dbzn = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '大便质硬':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_dbzy = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '大便水样':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_dbsy = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '大便腥臭':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_dbxc = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '大便臭秽':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_dbch = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '便血':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_bx = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '大便夹泡沫':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_dbjpm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '粪便食物残渣':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_fbswcz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '脓血便':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bz_nxb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
