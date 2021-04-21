@@ -2017,6 +2017,64 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        # 中医病机 ？
+        # 中药处方 ？
+        # 主症
+        if orgin[12] == '主症_诱因：':
+            if orgin[14] == '遇冷':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET yfys_yl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '情志':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET yfys_qt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '劳力':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET yfys_ll = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '劳神':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET yfys_ls = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '食积':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET yfys_sj = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '饮酒':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET yfys_yj = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
