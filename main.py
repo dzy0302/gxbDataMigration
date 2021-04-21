@@ -1944,6 +1944,79 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '平素情志_平素情志：':
+            if orgin[14] == '急躁易怒':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET qx_jzyn = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '善悲':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET qx_sb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '善惊':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET qx_sj = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '善恐':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET qx_sk = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '善疑':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET qx_sy = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '善忧思':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET qx_sys = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '自卑':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET qx_zb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '抑郁':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET qx_yy = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
