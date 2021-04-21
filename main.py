@@ -1059,6 +1059,79 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '食纳症状_食纳症状:':
+            if orgin[14] == '食欲减退':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnsnzz_syjt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '厌食':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnsnzz_ys = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '饥不欲食':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnsnzz_jbzs = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '食少':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnsnzz_ss = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '饮食过度':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnsnzz_ysgd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '消谷善饥':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnsnzz_xgsj = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '恶闻食臭':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnsnzz_ewsc = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '夜食':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnsnzz_yes = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
