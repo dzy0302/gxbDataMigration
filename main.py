@@ -1132,6 +1132,106 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '口味症状_口味症状:':
+            if orgin[14] == '口淡':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnkwzz_kd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口甜':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnkwzz_kt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口黏腻':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnkwzz_knn = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口酸':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnkwzz_ks = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口苦':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnkwzz_kk = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口涩':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnkwzz_kse = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口咸':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnkwzz_kxian = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口香':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnkwzz_kxiang = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口辛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnkwzz_kxin = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '有尿味':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnkwzz_ynw = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口气浊臭':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wnkwzz_kqzc = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
