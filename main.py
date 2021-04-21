@@ -1414,6 +1414,43 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '大便症状_便次:':
+            if orgin[14] == '便秘':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bc_bm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '泄泻':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bc_xx = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '上吐下泻':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bc_stxx = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '五更泻':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET bc_wgx = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
