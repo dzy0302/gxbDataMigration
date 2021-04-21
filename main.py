@@ -1232,6 +1232,52 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '口味偏嗜_口味偏嗜:':
+            if orgin[14] == '偏嗜肥甘':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ysps_psfg = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '偏嗜辛辣':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ysps_psxl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '偏食生冷':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ysps_pssl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '喜热食':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ysps_xrs = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '喜食异物':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ysps_xsyw = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
