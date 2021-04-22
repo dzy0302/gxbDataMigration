@@ -3881,6 +3881,28 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        # 心肌梗死 ？
+        # 末次心肌梗死发生于： ？
+        if orgin[12] == '心肌梗死病史_心肌梗死类型：':
+            if orgin[14] == 'ST段抬高型心肌梗死':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_stemi = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '非ST段抬高型心肌梗死':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_nstemi = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+
 
 
 
