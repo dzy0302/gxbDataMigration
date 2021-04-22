@@ -3785,6 +3785,36 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        # 其他
+        if orgin[12] == 'NT-proBNP:':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET ntprobnp = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        # BNP ？
+        if orgin[12] == '超敏C反应蛋白（hs-CRP）：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET hscrp = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        # C反应蛋白（CRP）: ？
+        if orgin[12] == '同型半胱氨酸（Hcy）:':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET hcy = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
 
 
 
