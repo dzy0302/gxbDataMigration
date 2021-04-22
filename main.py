@@ -3185,6 +3185,115 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '伴随症状_肢体症状:':
+            if orgin[14] == '肢体震颤':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ztzz_ztzc = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '肢体刺痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ztzz_ztct = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '肢体酸痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ztzz_ztst = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '四肢疼痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ztzz_sztt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '肩痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ztzz_jt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '臂痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ztzz_bt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '掌中热痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ztzz_zzrt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '肢端冷痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ztzz_zdlt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '腿痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ztzz_tt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '下肢灼痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ztzz_xzzt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '足跟痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ztzz_zgt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '足痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ztzz_zt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
