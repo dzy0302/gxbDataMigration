@@ -3815,6 +3815,73 @@ def transplant():
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
                 break
+        # 冠心病
+        # 心绞痛发作频率_心绞痛发作频率： ？
+        if orgin[12] == '心肌梗死病史_最后一次发病累及部位：':
+            if orgin[14] == '前壁':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgsqb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '前间壁':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgsqjb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '下壁':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgsxb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '侧壁':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgscb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '高侧壁':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgsgcb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '后壁':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgshb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '右室':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgsys = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+
 
 
 
