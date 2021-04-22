@@ -3902,6 +3902,67 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        # 手术次数 ？
+        # 最近的一次手术日期 ？
+        # 凝血 ？
+        # 动态血压 ？
+        # 心电图
+        if orgin[12] == '心电图_心律:':
+            if orgin[14] == '窦性心律':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xl_dxxl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '室上性心动过速':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xl_ssxxdgs = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '室性心动过速':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xl_sxxdgs = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '心房扑动':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xl_xfpd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '心房颤动':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xl_xfcd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '房室交界性逸搏心律':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xl_fsjjxybxl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+
 
 
 
