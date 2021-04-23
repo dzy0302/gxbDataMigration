@@ -4036,6 +4036,15 @@ def transplant():
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
                 break
+        if orgin[12] == 'QTc间期：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET qtcjq = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
 
 
 
