@@ -4177,6 +4177,34 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '五官_目眦所见:':
+            if orgin[14] == '目眦淡白':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgmz_mzdb = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '目眦红肿':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgmz_mzhz = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '目眦溃烂':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgmz_mzkl = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
