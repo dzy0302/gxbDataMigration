@@ -343,15 +343,15 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
-        if orgin[12] == '平均心率：':
-            try:
-                cur.execute(
-                    'UPDATE record_common2 SET xl = %s WHERE ID = %s;', (orgin[14], table_common_id))
-                conn.commit()
-            except Exception as ex:
-                logging.error('[更新异常]' + str(ex))
-                conn.rollback()
-                break
+        # if orgin[12] == '平均心率：':
+        #     try:
+        #         cur.execute(
+        #             'UPDATE record_common2 SET xl = %s WHERE ID = %s;', (orgin[14], table_common_id))
+        #         conn.commit()
+        #     except Exception as ex:
+        #         logging.error('[更新异常]' + str(ex))
+        #         conn.rollback()
+        #         break
         # 一般情况
         if orgin[12] == '问寒_问寒:':
             if orgin[14] == '畏寒':
@@ -4027,6 +4027,15 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '心率：':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET xl = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
 
 
 
