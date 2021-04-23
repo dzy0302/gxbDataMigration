@@ -4639,6 +4639,12 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        # if orgin[12] == '他汀类药物_他汀类药物：':
+        # if orgin[12] == '血管紧张转换酶抑制剂（ACEI）_血管紧张转换酶抑制剂（ACEI）：':
+        # if orgin[12] == '血管紧张素Ⅱ受体阻滞剂（ARB）_血管紧张素Ⅱ受体阻滞剂（ARB）：':
+        # if orgin[12] == 'β受体阻滞剂_β受体阻滞剂：':
+        # if orgin[12] == '钙离子通道阻滞剂（CCB）_钙离子通道阻滞剂（CCB）：':
+        # if orgin[12] == '硝酸酯类药物_硝酸酯类药物：':
 
 
 
