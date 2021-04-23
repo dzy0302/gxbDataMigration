@@ -3962,6 +3962,43 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '心电图_传导阻滞：':
+            if orgin[14] == 'Ⅰ度房室传导阻滞':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xdtcdzz_1dfscdzz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'Ⅱ度Ⅰ型房室传导阻滞':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xdtcdzz_2d1xfscdzz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'Ⅱ度Ⅱ型房室传导阻滞':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xdtcdzz_2d2xfscdzz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'Ⅲ度房室传导阻滞':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xdtcdzz_3dfscdzz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
