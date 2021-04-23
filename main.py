@@ -4074,6 +4074,64 @@ def transplant():
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
                 break
+        # 月经史 ？
+        # 望五官
+        if orgin[12] == '五官_白睛所见:':
+            if orgin[14] == '目赤':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgbj_mc = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '目黄':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgbj_mh = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '白睛肿胀':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgbj_bjzz = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '白睛微肿':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgbj_bjwz = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '白睛结节':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgbj_bjjj = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '目珠俱青':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgbj_mzjq = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+
 
 
 
