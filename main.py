@@ -4045,6 +4045,35 @@ def transplant():
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
                 break
+        # 心肌酶
+        if orgin[12] == '超敏肌钙蛋白T（hs-TnT）':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET hstnt = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        # 心肌酶-超敏肌钙蛋白I（hs-TnI） ？
+        if orgin[12] == '肌酸激酶同工酶（CKMB）:':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET ckmb = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '肌红蛋白（MYO）：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET myo = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
 
 
 
