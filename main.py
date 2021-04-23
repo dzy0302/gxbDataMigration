@@ -4131,6 +4131,52 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '五官_黑睛所见:':
+            if orgin[14] == '黑镜浑浊':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wghj_hjhz = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '黑睛粗糙':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wghj_hjcc = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '黑睛生翳':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wghj_hjsy = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '黑睛色白':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wghj_hjsb = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '黑睛色红':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wghj_hjsh = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
