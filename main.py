@@ -4601,6 +4601,44 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        # 现服西药
+        if orgin[12] == '抗血小板药物_抗血小板药物：':
+            if orgin[14] == '阿司匹林':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET kxxbyw_aspl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '氯吡格雷':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET kxxbyw_lbgl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '普拉格雷':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET kxxbyw_plgl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '替格瑞洛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET kxxbyw_tgrl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
