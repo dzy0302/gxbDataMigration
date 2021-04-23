@@ -4397,6 +4397,211 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        # 望面色
+        if orgin[12] == '面色_赤色':
+            if orgin[14] == '无':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_cs = %s WHERE ID = %s;', (0, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '满面通红':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_cs = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '面红如妆':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_cs = %s WHERE ID = %s;', (2, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '午后两颧潮红':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_cs = %s WHERE ID = %s;', (3, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '目赤':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_cs = %s WHERE ID = %s;', (4, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+        if orgin[12] == '面色_白色:':
+            if orgin[14] == '无':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_bs = %s WHERE ID = %s;', (0, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '淡白':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_bs = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '晄白':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_bs = %s WHERE ID = %s;', (2, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '苍白':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_bs = %s WHERE ID = %s;', (3, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+        if orgin[12] == '面色_黄色:':
+            if orgin[14] == '无':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_hus = %s WHERE ID = %s;', (0, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '萎黄':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_hus = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '黄胖':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_hus = %s WHERE ID = %s;', (2, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '黄疸':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_hus = %s WHERE ID = %s;', (3, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+        if orgin[12] == '面色_青色:':
+            if orgin[14] == '无':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_qs = %s WHERE ID = %s;', (0, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '淡青或青黑':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_qs = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '青黄':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_qs = %s WHERE ID = %s;', (2, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '面色口唇青紫':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_qs = %s WHERE ID = %s;', (3, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '眉间鼻柱唇周发青':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_qs = %s WHERE ID = %s;', (4, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+        if orgin[12] == '面色_黑色:':
+            if orgin[14] == '无':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_hes = %s WHERE ID = %s;', (0, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '面黑暗淡':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_hes = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '面黑焦干':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_hes = %s WHERE ID = %s;', (2, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '眼眶发黑':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET ms_hes = %s WHERE ID = %s;', (3, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+
 
 
 
