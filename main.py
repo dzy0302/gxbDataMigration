@@ -4278,6 +4278,125 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '五官_口唇所见:':
+            if orgin[14] == '牙龈紫暗':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgkc_yyza = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口唇色暗':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgkc_kcsa = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口唇赤烂':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgkc_kccl = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口唇红肿':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgkc_kchz = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口唇淡白':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgkc_kcdb = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            # 口唇苍白 ？
+            if orgin[14] == '口唇颤动':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgkc_kccd = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '唇舌青紫':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgkc_csqz = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '唇舌色暗':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgkc_cssa = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口中生疮':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgkc_kzsc = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口腔赤烂':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgkc_kqcl = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口角皲裂':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgkc_kjjl = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口角红肿':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgkc_kjhz = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '口眼㖞斜':
+                try:
+                    cur.execute(
+                        'UPDATE record_common2 SET wgkc_kywx = %s WHERE ID = %s;', (1, table_common_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
