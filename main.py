@@ -3999,6 +3999,34 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '心电图_期前收缩:':
+            if orgin[14] == '房性期前收缩':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xdtqqss_fxqqss = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '房室交界性期前收缩':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xdtqqss_fsjjxqqss = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '室性期前收缩':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xdtqqss_sxqqass = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
