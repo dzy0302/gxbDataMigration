@@ -4756,6 +4756,27 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        # if orgin[12] == '抗凝药物_抗凝药物:':
+        if orgin[12] == '其他药物_其他药物:':
+            if orgin[14] == '地高辛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET qtyw_dgx = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '伊伐布雷定':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET qtyw_yfbld = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            # 依折麦布 沙库巴曲缬沙坦钠 ？
 
 
 
