@@ -4896,6 +4896,162 @@ def transplant():
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
                 break
+        # 舌诊脉象
+        if orgin[12] == '舌质_舌色：':
+            if orgin[14] == '淡红':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_dh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '淡白':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_db = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '红舌':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_hos = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '绛舌':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_js = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '淡紫':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_dz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '紫红':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_zh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '边尖红':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_bjh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '暗红':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_ah = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '绛紫':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_jz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '青紫':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_qz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '紫暗':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_za = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '暗舌':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_as = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '黑舌':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_hes = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '枯白':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_kb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '瘀斑瘀点':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_ybyd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '青舌':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_qs = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '灰舌':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ss_hus = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+
 
 
 
