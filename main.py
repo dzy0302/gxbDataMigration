@@ -4798,7 +4798,15 @@ def transplant():
                 break
         # 腰围 ？
         # 血压 ？
-        # 收缩压 ？
+        if orgin[12] == '收缩压：':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET ssy = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
         # 呼吸 ？
         if orgin[12] == '心率：':
             try:
@@ -5453,6 +5461,80 @@ def transplant():
                 conn.rollback()
                 break
         # 血小板计数（PLT）： ？
+        # 血糖
+        if orgin[12] == '空腹血糖（GLU）：':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET kfxt = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '餐后2小时血糖':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET ch2xxxthl = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '糖化血红蛋白（HAb1c）:':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET thxhdb = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        # 血脂
+        if orgin[12] == '总胆固醇（TC）：':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET zdgc = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '甘油三酯（TG）:':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET gysz = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '高密度脂蛋白胆固醇（HDL-C）:':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET gmdzdbc = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '低密度脂蛋白胆固醇（LDL-C）:':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET dmdzdbc = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '脂蛋白a（Lp（a））':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET zzdba = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
 
 
 
