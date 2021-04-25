@@ -4777,6 +4777,39 @@ def transplant():
                     conn.rollback()
                     break
             # 依折麦布 沙库巴曲缬沙坦钠 ？
+        # 生命体征
+        if orgin[12] == '身高：':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET sg = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '体重:':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET tz = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        # 腰围 ？
+        # 血压 ？
+        # 收缩压 ？
+        # 呼吸 ？
+        if orgin[12] == '心率：':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET xl = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
 
 
 
