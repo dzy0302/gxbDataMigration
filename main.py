@@ -5414,6 +5414,46 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        # 血常规
+        # 淋巴细胞百分比 ？
+        if orgin[12] == '中性粒细胞百分比':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET zxlxb_bfb = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '红细胞计数（RBC）':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET hxb_js = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '白细胞计数（WBC）:':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET bxb_js = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '血红蛋白（Hb）：':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET xhdb_hl = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        # 血小板计数（PLT）： ？
+
 
 
 
