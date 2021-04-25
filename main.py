@@ -4809,6 +4809,34 @@ def transplant():
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
                 break
+        # 甲功
+        if orgin[12] == '游离三碘甲状腺原氨酸（FT3）：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET ft3 = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '游离甲状腺素（FT4）：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET ft4 = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '促甲状腺素（TSH）：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET tsh = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
 
 
 
