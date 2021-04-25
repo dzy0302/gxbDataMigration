@@ -5780,6 +5780,97 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '主要诊断_主要诊断_心功能不全_亚诊断':
+            if orgin[14] == 'NYHA  I级':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xgnbq_nyha1j = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'NYHA  II级':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xgnbq_nyha2j = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'NYHA  III级':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xgnbq_nyha3j = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'NYHA  IV 级':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xgnbq_nyha4j = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '左心衰':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xgnbq_zxs = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '右心衰':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xgnbq_yxs = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '全心衰':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xgnbq_qxs = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'HFrEF':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xgnbq_hfref = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'HFmrEF':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xgnbq_hfmref = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'HFpEF':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xgnbq_hfpef = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
