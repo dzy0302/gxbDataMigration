@@ -4645,6 +4645,97 @@ def transplant():
         # if orgin[12] == 'β受体阻滞剂_β受体阻滞剂：':
         # if orgin[12] == '钙离子通道阻滞剂（CCB）_钙离子通道阻滞剂（CCB）：':
         # if orgin[12] == '硝酸酯类药物_硝酸酯类药物：':
+        if orgin[12] == '利尿剂_利尿剂:':
+            if orgin[14] == '呋塞米':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET lnj_fsm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '布美他尼':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET lnj_bmtn = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '托拉塞米':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET lnj_tlsm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '苄氟噻嗪':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET lnj_bfsq = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '氯噻酮':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET lnj_lst = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '吲达帕胺':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET lnj_ydpa = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '美托拉宗':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET lnj_mtlz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '氨苯蝶啶':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET lnj_abdd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '托伐普坦':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET lnj_tfpt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '氢氯噻嗪':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET lnj_qlsq = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
