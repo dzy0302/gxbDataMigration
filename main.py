@@ -4837,6 +4837,66 @@ def transplant():
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
                 break
+        # 肝功能
+        if orgin[12] == '谷丙转氨酶（ALT）：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET alt = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '谷草转氨酶（AST）：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET ast = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '总胆红素（TBil）：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET tbil = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        # 直接胆红素（DBil） ？
+        # γ-谷氨酰转肽酶（γ-GT） ？
+        # 碱性磷酸酶（ALP） ？
+        # 肾功能
+        if orgin[12] == '血肌酐（Cr）：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET cr = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '尿酸（UA）：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET ua = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+        if orgin[12] == '尿素氮（BUN）:':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET bun = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
 
 
 
