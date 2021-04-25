@@ -5535,6 +5535,252 @@ def transplant():
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
                 break
+        # 西医诊断
+        if orgin[12] == '主要诊断_主要诊断_冠心病_亚诊断':
+            if orgin[14] == '稳定性心绞痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_wdxxjt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '缺血性心肌病':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_qxxxjb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '不稳定性心绞痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_bwdxxjt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '初发劳力型心绞痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cfllxxjt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '恶化劳力型心绞痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_ehllxxjt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '自发型心绞痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_zfxxjt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '变异型心绞痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_byxxjt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '卧位型心绞痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_wwxxjt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '其他型心绞痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_qtxxjt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'CCS I级':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_ccs1j = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'CCS  II级':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_ccs2j = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'CCS  III级':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_ccs3j = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'CCS IV级':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_ccs4j = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'PCI术后':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_pcish = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'CABG术后':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cabgsh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '陈旧性心肌梗死（未知部位）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgswzbw = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '陈旧性心肌梗死（前壁）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgsqb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '陈旧性心肌梗死（前间壁）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgsqjb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '陈旧性心肌梗死（下壁）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgsxb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '陈旧性心肌梗死（后壁）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgshb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '陈旧性心肌梗死（侧壁）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgscb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '陈旧性心肌梗死（高侧壁）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgsgcb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '陈旧性心肌梗死（右室）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_cjxxjgsys = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'STEMI':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_stemi = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'NSTEMI':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_nstemi = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '室壁瘤':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_sbl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '附壁血栓':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxb_jxxjgshxsfbxsxc = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+
 
 
 
