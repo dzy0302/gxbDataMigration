@@ -5871,6 +5871,142 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '主要诊断_主要诊断_心律失常_亚诊断':
+            if orgin[14] == '室性期前收缩':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_sxqqss = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '房性期前收缩':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_fxqqss = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '心房颤动':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_xfcd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '心房扑动':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_xfpd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'II度I型房室传导阻滞':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_2d1xfscdzz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'II度II型房室传导阻滞':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_2d2xfscdzz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'III度房室传导阻滞':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_3dfscdzz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '安装心脏起搏器状态':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_azxzqbqzt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '预激综合征':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_yjzhz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '窦性心动过缓':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_dxxdgh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '病窦综合征':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_bdzhz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == 'I度房室传导阻滞':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_1dfscdzz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '左束支传导阻滞':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_zszcdzz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '右束支传导阻滞':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_yszcdzz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '快慢综合征':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xlsc_kmzhz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
