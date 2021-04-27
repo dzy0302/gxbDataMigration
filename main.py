@@ -6165,6 +6165,80 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        # if orgin[12] == '主要诊断_主要诊断_慢性肾功能不全_亚诊断':
+        if orgin[12] == '主要诊断_主要诊断_周围血管病_亚诊断':
+            if orgin[14] == '颈动脉粥样硬化':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zwxgb_jdmzyyh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '下肢动脉粥样硬化':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zwxgb_xzdmzyyh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '主动脉粥样硬化':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zwxgb_zdmzyyh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '脑动脉粥样硬化':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zwxgb_ndmzyyh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '锁骨下动脉粥样硬化':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zwxgb_sgxdmzyyh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '肾动脉粥样硬化':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zwxgb_sdmzyyh = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '深静脉血栓形成':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zwxgb_sjmxsxc = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '下肢静脉曲张':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zwxgb_xzjmqz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
