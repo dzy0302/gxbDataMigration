@@ -6053,6 +6053,43 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '主要诊断_主要诊断_高脂血症_亚诊断':
+            if orgin[14] == '高甘油三酯血症':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxzz_ggyszxz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '高胆固醇血症':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxzz_gdgcxz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '低高密度脂蛋白血症':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxzz_dgmdzdbxz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '混合型高脂血症':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxzz_hhxgzxz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
