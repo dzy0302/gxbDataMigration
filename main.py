@@ -6119,6 +6119,52 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '主要诊断_主要诊断_糖尿病并发症_亚诊断':
+            if orgin[14] == '糖尿病肾病':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET tnbbfz_tnbsb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '糖尿病眼部并发症':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET tnbbfz_tnbybbfz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '糖尿病足':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET tnbbfz_tnbz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '糖尿病大血管并发症':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET tnbbfz_tnbdxgbfz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '糖尿病周围血管病变':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET tnbbfz_tnbzwxgbb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
