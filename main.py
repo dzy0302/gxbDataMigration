@@ -6090,6 +6090,35 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '主要诊断_主要诊断':
+            if orgin[14] == '2型糖尿病':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET extnb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+        if orgin[12] == '主要诊断_主要诊断_糖尿病前期_亚诊断':
+            if orgin[14] == '空腹血糖异常':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET tnbqq_kfxtyc = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '糖耐量异常':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET tnbqq_tnlyc = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
