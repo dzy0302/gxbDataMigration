@@ -6007,6 +6007,52 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
+        if orgin[12] == '主要诊断_主要诊断_高血压_亚诊断':
+            if orgin[14] == '高血压  1级':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxyb_gxy1j = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '高血压 2级':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxyb_gxy2j = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '高血压3级':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxyb_gxy3j = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '原发性高血压':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxyb_yfxgxy = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '继发性高血压':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gxyb_jfxgxy = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
 
 
 
