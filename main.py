@@ -90,7 +90,7 @@ def transplant():
                     '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
                     '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
                     '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);'
-                    , (None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
+                    , (None, 1, 102, None, 176, '网络中心-冠心病测试', None, None, None, None, None, None, None, None, None, None,
                        None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
                        None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
                        None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
@@ -109,9 +109,9 @@ def transplant():
                        None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
                        None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
                        None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
+                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, 'admin', 176,
                        time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-                       time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), None, None, table_patient_id))
+                       time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), 0, None, table_patient_id))
                 logging.debug("[最新ID]" + str(cur.lastrowid))
                 logging.debug("[插入数据的ID]" + str(conn.insert_id()))
                 table_common_id = conn.insert_id()
@@ -197,7 +197,7 @@ def transplant():
                        None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
                        None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
                        None, None, time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-                       time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), None, None, None, None, None, None, None,
+                       time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), 0, None, None, None, None, None, None,
                        None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
                        None, None, None, None, None, None, None, None))
                 logging.debug("[最新ID]" + str(cur.lastrowid))
@@ -210,9 +210,9 @@ def transplant():
                 break
 
         # 转译数据
-        logging.info('[patient表主键]' + str(table_patient_id[0]))
-        logging.info('[common表主键]' + str(table_common_id[0]))
-        logging.info('[gxb表主键]' + str(table_gxb_id[0]))
+        # logging.info('[patient表主键]' + str(table_patient_id[0]))
+        # logging.info('[common表主键]' + str(table_common_id[0]))
+        # logging.info('[gxb表主键]' + str(table_gxb_id[0]))
         # Holter
         if orgin[12] == '心律_心律：':
             if orgin[14] == '窦性心律':
