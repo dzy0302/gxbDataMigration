@@ -4819,70 +4819,70 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
-        # if orgin[12] == '钙离子通道阻滞剂（CCB）_钙离子通道阻滞剂（CCB）：':
-        #     if orgin[14] == '无':
-        #         try:
-        #             cur.execute(
-        #                 'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (0, table_gxb_id))
-        #             conn.commit()
-        #         except Exception as ex:
-        #             logging.error('[更新异常]' + str(ex))
-        #             conn.rollback()
-        #             break
-        #     if orgin[14] == '无':
-        #         try:
-        #             cur.execute(
-        #                 'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (0, table_gxb_id))
-        #             conn.commit()
-        #         except Exception as ex:
-        #             logging.error('[更新异常]' + str(ex))
-        #             conn.rollback()
-        #             break
-        #     if orgin[14] == '无':
-        #         try:
-        #             cur.execute(
-        #                 'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (0, table_gxb_id))
-        #             conn.commit()
-        #         except Exception as ex:
-        #             logging.error('[更新异常]' + str(ex))
-        #             conn.rollback()
-        #             break
-        #     if orgin[14] == '无':
-        #         try:
-        #             cur.execute(
-        #                 'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (0, table_gxb_id))
-        #             conn.commit()
-        #         except Exception as ex:
-        #             logging.error('[更新异常]' + str(ex))
-        #             conn.rollback()
-        #             break
-        #     if orgin[14] == '无':
-        #         try:
-        #             cur.execute(
-        #                 'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (0, table_gxb_id))
-        #             conn.commit()
-        #         except Exception as ex:
-        #             logging.error('[更新异常]' + str(ex))
-        #             conn.rollback()
-        #             break
-        #     if orgin[14] == '无':
-        #                 try:
-        #                     cur.execute(
-        #                         'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (0, table_gxb_id))
-        #                     conn.commit()
-        #                 except Exception as ex:
-        #                     logging.error('[更新异常]' + str(ex))
-        #                     conn.rollback()
-        #                     break
-        #     if orgin[14] == '无':
-        #         try:
-        #             cur.execute(
-        #                 'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (0, table_gxb_id))
-        #             conn.commit()
-        #         except Exception as ex:
-        #             logging.error('[更新异常]' + str(ex))
-        #             conn.rollback()
-        #             break
+        if orgin[12] == '钙离子通道阻滞剂（CCB）_钙离子通道阻滞剂（CCB）：':
+            if orgin[14] == '无':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '硝苯地平':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '氨氯地平':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '地尔硫卓':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '维拉帕米':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '非洛地平':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '贝尼地平':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ccb = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
         # if orgin[12] == '硝酸酯类药物_硝酸酯类药物：':
         if orgin[12] == '利尿剂_利尿剂:':
             if orgin[14] == '呋塞米':
