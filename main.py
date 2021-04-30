@@ -28,6 +28,7 @@ ch.setFormatter(formatter)
 logger.addHandler(fh)
 logger.addHandler(ch)
 
+
 def get_conn():
     config = configparser.RawConfigParser()
     config.read('configs/db.ini')
@@ -53,17 +54,20 @@ def transplant():
 
         # 获取表/新建表：受试者基本信息
         patient_id = orgin[0]
-        logging.info('[受试者编号]' + str(patient_id))
-        cur.execute('SELECT ID FROM patient where hzbh = %s;', patient_id)
+        logging.info('[原始数据受试者编号]' + str(patient_id))
+        hzbh = 102000000 + patient_id
+        logging.info('[iHealth受试者编号]' + str(hzbh))
+        cur.execute('SELECT ID FROM patient where hzbh = %s;', hzbh)
         table_patient_id = cur.fetchone()
         if table_patient_id is None:
+            hzbh = 102000000 + patient_id
             xb = 1 if orgin[2] == '男' else 2
             try:
                 cur.execute(
-                    'INSERT INTO patient VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);'
-                    , (None, None, None, None, orgin[4], xb, None, None, None, None, None, None, 0, 0, None,
-                       patient_id, None, None, None, time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-                       time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
+                    'INSERT INTO patient(ID, csrq, xb, gzgzh, bdgzh, hzbh, CREATE_TIME, UPDATE_TIME)'
+                    'VALUES(%s,%s,%s,%s,%s,%s,%s,%s);',
+                    (None, orgin[4], xb, 0, 0, hzbh, time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
+                     time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
                 logging.debug("[最新ID]" + str(cur.lastrowid))
                 logging.debug("[插入数据的ID]" + str(conn.insert_id()))
                 table_patient_id = conn.insert_id()
@@ -79,39 +83,11 @@ def transplant():
         if table_common_id is None:
             try:
                 cur.execute(
-                    'INSERT INTO record_common2 VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);'
-                    , (None, 1, 102, None, 176, '网络中心-冠心病测试', None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, 'admin', 176,
+                    'INSERT INTO record_common2(ID, BLLX, SUBJECT_ID, yljg_bh, yljg_mc, USER_ID, ORG_ID, CREATE_TIME,'
+                    ' UPDATE_TIME, STATUS, PATIENT_ID) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);'
+                    , (None, 0, 102, 176, '网络中心-冠心病测试', 'admin', 176,
                        time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-                       time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), 0, None, table_patient_id))
+                       time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), 0, table_patient_id))
                 logging.debug("[最新ID]" + str(cur.lastrowid))
                 logging.debug("[插入数据的ID]" + str(conn.insert_id()))
                 table_common_id = conn.insert_id()
@@ -127,79 +103,9 @@ def transplant():
         if table_gxb_id is None:
             try:
                 cur.execute(
-                    'INSERT INTO record_gxb2 VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'
-                    '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);'
-                    , (None, table_common_id, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-                       time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), 0, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                       None, None, None, None, None, None, None, None))
+                    'INSERT INTO record_gxb2(ID, COMMON_ID, CREATE_TIME, UPDATE_TIME, STATUS) VALUES(%s,%s,%s,%s,%s);'
+                    , (None, table_common_id, time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
+                       time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), 0))
                 logging.debug("[最新ID]" + str(cur.lastrowid))
                 logging.debug("[插入数据的ID]" + str(conn.insert_id()))
                 table_gxb_id = conn.insert_id()
@@ -4639,7 +4545,88 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
-        # if orgin[12] == '他汀类药物_他汀类药物：':
+        if orgin[12] == '他汀类药物_他汀类药物：':
+            if orgin[14] == '无':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ttlyw = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '氟伐他汀':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ttlyw = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '洛伐他汀':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ttlyw = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '辛伐他汀':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ttlyw = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '血脂康':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ttlyw = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '阿托伐他汀':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ttlyw = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '瑞舒伐他汀':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ttlyw = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '匹伐他汀':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ttlyw = %s WHERE ID = %s;', (7, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '普伐他汀':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ttlyw = %s WHERE ID = %s;', (8, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
         # if orgin[12] == '血管紧张转换酶抑制剂（ACEI）_血管紧张转换酶抑制剂（ACEI）：':
         # if orgin[12] == '血管紧张素Ⅱ受体阻滞剂（ARB）_血管紧张素Ⅱ受体阻滞剂（ARB）：':
         # if orgin[12] == 'β受体阻滞剂_β受体阻滞剂：':
@@ -6340,22 +6327,6 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         # id = row[0]
         # name = row[1]
