@@ -116,9 +116,9 @@ def transplant():
                 break
 
         # 转译数据
-        # logging.info('[patient表主键]' + str(table_patient_id[0]))
-        # logging.info('[common表主键]' + str(table_common_id[0]))
-        # logging.info('[gxb表主键]' + str(table_gxb_id[0]))
+        logging.info('[patient表主键]' + str(table_patient_id[0]))
+        logging.info('[common表主键]' + str(table_common_id[0]))
+        logging.info('[gxb表主键]' + str(table_gxb_id[0]))
         # Holter
         if orgin[12] == '心律_心律：':
             if orgin[14] == '窦性心律':
@@ -4627,7 +4627,79 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
-        # if orgin[12] == '血管紧张转换酶抑制剂（ACEI）_血管紧张转换酶抑制剂（ACEI）：':
+        if orgin[12] == '血管紧张转换酶抑制剂（ACEI）_血管紧张转换酶抑制剂（ACEI）：':
+            if orgin[14] == '无':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET acei = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '卡托普利':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET acei = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '贝那普利':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET acei = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '福辛普利':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET acei = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '依那普利':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET acei = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '培哚普利':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET acei = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '雷米普利':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET acei = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '来诺普利':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET acei = %s WHERE ID = %s;', (7, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
         # if orgin[12] == '血管紧张素Ⅱ受体阻滞剂（ARB）_血管紧张素Ⅱ受体阻滞剂（ARB）：':
         # if orgin[12] == 'β受体阻滞剂_β受体阻滞剂：':
         # if orgin[12] == '钙离子通道阻滞剂（CCB）_钙离子通道阻滞剂（CCB）：':
