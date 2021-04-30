@@ -4975,7 +4975,34 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
-        # if orgin[12] == '醛固酮受体拮抗剂_醛固酮受体拮抗剂:':
+        if orgin[12] == '醛固酮受体拮抗剂_醛固酮受体拮抗剂:':
+            if orgin[14] == '无':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET qgtstjkj = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '螺内酯':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET qgtstjkj = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '依普利酮':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET qgtstjkj = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
         if orgin[12] == '其他抗心肌缺血药物_其他抗心肌缺血药物:':
             if orgin[14] == '曲美他嗪':
                 try:
@@ -4995,7 +5022,43 @@ def transplant():
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
                     break
-        # if orgin[12] == '抗凝药物_抗凝药物:':
+        if orgin[12] == '抗凝药物_抗凝药物:':
+            if orgin[14] == '无':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET knyw = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '华法林':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET knyw = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '达比加群':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET knyw = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
+            if orgin[14] == '利伐沙班':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET knyw = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    break
         if orgin[12] == '其他药物_其他药物:':
             if orgin[14] == '地高辛':
                 try:
