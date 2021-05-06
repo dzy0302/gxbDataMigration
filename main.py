@@ -7087,6 +7087,23 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # xlsc是否有心律失常
+    cur.execute(
+        'SELECT ID, xlsc_sxqqss, xlsc_fxqqss, xlsc_xfcd, xlsc_xfpd, xlsc_1dfscdzz, xlsc_2d1xfscdzz, xlsc_2d2xfscdzz, '
+        'xlsc_3dfscdzz, xlsc_azxzqbqzt, xlsc_yjzhz, xlsc_dxxdgh, xlsc_bdzhz, xlsc_zszcdzz, xlsc_yszcdzz, xlsc_kmzhz, '
+        'xlsc_spxrsh FROM record_gxb2;')
+    xlsc_data = cur.fetchall()
+    for xlsc in xlsc_data:
+        if 1 in xlsc:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET xlsc = %s WHERE ID = %s;', (1, xlsc[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
