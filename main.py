@@ -6715,22 +6715,39 @@ def clean_gxb():
                 conn.rollback()
                 break
 
-        # weh问汗是否异常
-        cur.execute(
-            'SELECT ID, weh_zih, weh_daoh, weh_dah, weh_duh, weh_hs, weh_hb, weh_hc, weh_lh, weh_rh, weh_hh, weh_yh, '
-            'weh_hzy, weh_jh, weh_zh, weh_sjhc, weh_xhhc, weh_eh, weh_th, weh_xh, weh_sh, weh_szxh, weh_hrhc'
-            ' FROM record_gxb2;')
-        weh_data = cur.fetchall()
-        for weh in weh_data:
-            if 1 in weh:
-                try:
-                    cur.execute(
-                        'UPDATE record_gxb2 SET weh = %s WHERE ID = %s;', (1, weh[0]))
-                    conn.commit()
-                except Exception as ex:
-                    logging.error('[更新异常]' + str(ex))
-                    conn.rollback()
-                    break
+    # weh问汗是否异常
+    cur.execute(
+        'SELECT ID, weh_zih, weh_daoh, weh_dah, weh_duh, weh_hs, weh_hb, weh_hc, weh_lh, weh_rh, weh_hh, weh_yh, '
+        'weh_hzy, weh_jh, weh_zh, weh_sjhc, weh_xhhc, weh_eh, weh_th, weh_xh, weh_sh, weh_szxh, weh_hrhc'
+        ' FROM record_gxb2;')
+    weh_data = cur.fetchall()
+    for weh in weh_data:
+        if 1 in weh:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET weh = %s WHERE ID = %s;', (1, weh[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    # ky渴饮是否异常
+    cur.execute(
+        'SELECT ID, ky_kg, ky_fk, ky_kkyy, ky_kxry, ky_kkdy, ky_kxly, ky_kbky, ky_kbyy, ky_kbdy, ky_byy, ky_ysd, '
+        'ky_yszq, ky_yrjt, ky_xly, ky_xry'
+        ' FROM record_gxb2;')
+    ky_data = cur.fetchall()
+    for ky in ky_data:
+        if 1 in ky:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET ky = %s WHERE ID = %s;', (1, ky[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
 
     conn.commit()
     cur.close()
