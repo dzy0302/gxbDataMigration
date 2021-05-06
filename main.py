@@ -7104,6 +7104,21 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # gxyb是否有高血压病
+    cur.execute(
+        'SELECT ID, gxyb_gxy1j, gxyb_gxy2j, gxyb_gxy3j, gxyb_yfxgxy, gxyb_jfxgxy FROM record_gxb2;')
+    gxyb_data = cur.fetchall()
+    for gxyb in gxyb_data:
+        if 1 in gxyb:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gxyb = %s WHERE ID = %s;', (1, gxyb[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
