@@ -6781,6 +6781,21 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # yfys是否有诱发因素
+    cur.execute(
+        'SELECT ID, yfys_yl, yfys_qt, yfys_ll, yfys_ls, yfys_sj, yfys_yj FROM record_gxb2;')
+    yfys_data = cur.fetchall()
+    for yfys in yfys_data:
+        if 1 in yfys:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET yfys = %s WHERE ID = %s;', (1, yfys[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
