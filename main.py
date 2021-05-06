@@ -7038,6 +7038,21 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # xdtqqss心电图期前收缩是否异常
+    cur.execute(
+        'SELECT ID, xdtqqss_fxqqss, xdtqqss_fsjjxqqss, xdtqqss_sxqqass FROM record_gxb2;')
+    xdtqqss_data = cur.fetchall()
+    for xdtqqss in xdtqqss_data:
+        if 1 in xdtqqss:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET xdtqqss = %s WHERE ID = %s;', (1, xdtqqss[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
