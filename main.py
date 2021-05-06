@@ -6811,6 +6811,22 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # zyzz主要症状是否有明显不适
+    cur.execute(
+        'SELECT ID, zyzz_xm, zyzz_xt, zyzz_ty, zyzz_tt, zyzz_xj, zyzz_qd, zyzz_fz, zyzz_fl, zyzz_xy, zyzz_tz, zyzz_bt, '
+        'zyzz_cc FROM record_gxb2;')
+    zyzz_data = cur.fetchall()
+    for zyzz in zyzz_data:
+        if 1 in zyzz:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET zyzz = %s WHERE ID = %s;', (1, zyzz[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
