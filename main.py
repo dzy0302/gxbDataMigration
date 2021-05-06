@@ -44,7 +44,7 @@ def transplant():
     conn = get_conn()
     cur = conn.cursor()
 
-    cur.execute('SELECT  * FROM origin_data;')
+    cur.execute('SELECT * FROM origin_data;')
     orgin_data = cur.fetchall()
     # print(type(results))  # 返回<class 'tuple'> tuple元组类型
 
@@ -116,9 +116,9 @@ def transplant():
                 break
 
         # 转译数据
-        logging.info('[patient表主键]' + str(table_patient_id[0]))
-        logging.info('[common表主键]' + str(table_common_id[0]))
-        logging.info('[gxb表主键]' + str(table_gxb_id[0]))
+        # logging.info('[patient表主键]' + str(table_patient_id[0]))
+        # logging.info('[common表主键]' + str(table_common_id[0]))
+        # logging.info('[gxb表主键]' + str(table_gxb_id[0]))
         # Holter
         if orgin[12] == '心律_心律：':
             if orgin[14] == '窦性心律':
@@ -6680,6 +6680,32 @@ def transplant():
     cur.close()
     conn.close()
 
+def clean_gxb():
+    conn = get_conn()
+    cur = conn.cursor()
+
+    # wh问寒是否异常
+    cur.execute('SELECT ID, wh_wh, wh_eh, wh_ef, wh_hz, wh_fl, wh_szbw, wh_sizbw, wh_sdh, wh_tl, wh_bl, wh_xzh, wh_ful, '
+                'wh_wzhl, wh_yxsl, wh_wpl, wh_yl, wh_yyxfl, wh_xhzl, wh_gjhl, wh_xw FROM record_gxb2;')
+    wh_data = cur.fetchall()
+    for wh in wh_data:
+        if 1 in wh:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET wh = %s WHERE ID = %s;', (1, wh[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
 
 if __name__ == '__main__':
-    transplant()
+    # 数据移植
+    # transplant()
+    # 数据清洗
+    clean_gxb()
