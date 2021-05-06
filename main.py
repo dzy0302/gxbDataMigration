@@ -6827,6 +6827,22 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # wgzz是否有五官症状
+    cur.execute(
+        'SELECT ID, wgzz_el, wgzz_em, wgzz_tljt, wgzz_lx, wgzz_bn, wgzz_bt, wgzz_my, wgzz_ms, wgzz_th, wgzz_sl, wgzz_mg, '
+        'wgzz_mt, wgzz_sg, wgzz_cg, wgzz_kcjl, wgzz_kctx, wgzz_cn, wgzz_sn, wgzz_yt FROM record_gxb2;')
+    wgzz_data = cur.fetchall()
+    for wgzz in wgzz_data:
+        if 1 in wgzz:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET wgzz = %s WHERE ID = %s;', (1, wgzz[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
