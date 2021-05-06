@@ -7053,6 +7053,24 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # gxb是否有冠心病异常
+    cur.execute(
+        'SELECT ID, gxb_wdxxjt, gxb_qxxxjb, gxb_bwdxxjt, gxb_cfllxxjt, gxb_ehllxxjt, gxb_zfxxjt, gxb_byxxjt, gxb_wwxxjt, '
+        'gxb_wwxxjt, gxb_qtxxjt, gxb_ccs1j, gxb_ccs2j, gxb_ccs3j, gxb_ccs4j, gxb_pcish, gxb_cabgsh, gxb_cjxxjgswzbw, '
+        'gxb_cjxxjgsqb, gxb_cjxxjgsqjb, gxb_cjxxjgsxb, gxb_cjxxjgshb, gxb_cjxxjgscb, gxb_cjxxjgsgcb, gxb_cjxxjgsys, '
+        'gxb_nstemi, gxb_stemi, gxb_sbl, gxb_jxxjgshxsfbxsxc FROM record_gxb2;')
+    gxb_data = cur.fetchall()
+    for gxb in gxb_data:
+        if 1 in gxb:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gxb = %s WHERE ID = %s;', (1, gxb[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
