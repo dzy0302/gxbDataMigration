@@ -7007,6 +7007,22 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # lnj是否有利尿剂
+    cur.execute(
+        'SELECT ID, lnj_fsm, lnj_bmtn, lnj_tlsm, lnj_bfsq, lnj_lst, lnj_ydpa, lnj_mtlz, lnj_abdd, lnj_tfpt, lnj_qlsq '
+        'FROM record_gxb2;')
+    lnj_data = cur.fetchall()
+    for lnj in lnj_data:
+        if 1 in lnj:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET lnj = %s WHERE ID = %s;', (1, lnj[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
