@@ -6751,15 +6751,30 @@ def clean_gxb():
 
     # wnsnzz是否有胃纳食纳症状
     cur.execute(
-        'SELECT ID, wnsnzz_syjt, wnsnzz_ys, wnsnzz_jbzs, wnsnzz_ss, wnsnzz_ysgd, wnsnzz_xgsj, wnsnzz_ewsc, wnsnzz_yes, '
-        'wnkwzz_kd, wnkwzz_kt, wnkwzz_knn, wnkwzz_ks, wnkwzz_kk, wnkwzz_kse, wnkwzz_kxian, wnkwzz_kxiang, wnkwzz_kxin, '
-        'wnkwzz_ynw, wnkwzz_kqzc FROM record_gxb2;')
+        'SELECT ID, wnsnzz_syjt, wnsnzz_ys, wnsnzz_jbzs, wnsnzz_ss, wnsnzz_ysgd, wnsnzz_xgsj, wnsnzz_ewsc, wnsnzz_yes '
+        'FROM record_gxb2;')
     wnsnzz_data = cur.fetchall()
     for wnsnzz in wnsnzz_data:
         if 1 in wnsnzz:
             try:
                 cur.execute(
                     'UPDATE record_gxb2 SET wnsnzz = %s WHERE ID = %s;', (1, wnsnzz[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    # wnkwzz是否有胃纳口味症状
+    cur.execute(
+        'SELECT ID, wnkwzz_kd, wnkwzz_kt, wnkwzz_knn, wnkwzz_ks, wnkwzz_kk, wnkwzz_kse, wnkwzz_kxian, wnkwzz_kxiang, '
+        'wnkwzz_kxin, wnkwzz_ynw, wnkwzz_kqzc FROM record_gxb2;')
+    wnkwzz_data = cur.fetchall()
+    for wnkwzz in wnkwzz_data:
+        if 1 in wnkwzz:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET wnkwzz = %s WHERE ID = %s;', (1, wnkwzz[0]))
                 conn.commit()
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
