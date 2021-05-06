@@ -7023,6 +7023,21 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # xl心律是否异常
+    cur.execute(
+        'SELECT ID, xl_dxxl, xl_ssxxdgs, xl_xfpd, xl_fsjjxybxl, xl_xfcd, xl_sxxdgs FROM record_gxb2;')
+    xl_data = cur.fetchall()
+    for xl in xl_data:
+        if 1 in xl:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET xl = %s WHERE ID = %s;', (1, xl[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
