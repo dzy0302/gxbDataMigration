@@ -6796,6 +6796,21 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # ysps是否有饮食偏奢
+    cur.execute(
+        'SELECT ID, ysps_psfg, ysps_psxl, ysps_pssl, ysps_xrs, ysps_xsyw FROM record_gxb2;')
+    ysps_data = cur.fetchall()
+    for ysps in ysps_data:
+        if 1 in ysps:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET ysps = %s WHERE ID = %s;', (1, ysps[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
