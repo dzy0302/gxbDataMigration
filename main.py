@@ -6699,6 +6699,22 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # wr问热是否异常
+    cur.execute(
+        'SELECT ID, wr_wr, wr_er, wr_fr, wr_wxfr, wr_szxr, wr_cr, wr_gzcr, wr_whyjcr, wr_zr, wr_rfcr, wr_srys, wr_tr, '
+        'wr_tmr, wr_xiozfr, wr_xinzfr, wr_xzyr, wr_br, wr_wzyr, wr_sbr, wr_yrzl FROM record_gxb2;')
+    wr_data = cur.fetchall()
+    for wr in wr_data:
+        if 1 in wr:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET wr = %s WHERE ID = %s;', (1, wr[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
