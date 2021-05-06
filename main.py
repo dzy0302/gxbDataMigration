@@ -6670,13 +6670,28 @@ def transplant():
                     conn.rollback()
                     break
 
-        # id = row[0]
-        # name = row[1]
-        # age = row[2]
-        # print('id: ' + str(id) + '  name: ' + name + '  age: ' + str(age))
-        # pass
+    cur.close()
+    conn.close()
 
-    conn.commit()
+def clean_common():
+    conn = get_conn()
+    cur = conn.cursor()
+
+    # wh问寒是否异常
+    cur.execute('SELECT ID, wh_wh, wh_eh, wh_ef, wh_hz, wh_fl, wh_szbw, wh_sizbw, wh_sdh, wh_tl, wh_bl, wh_xzh, wh_ful, '
+                'wh_wzhl, wh_yxsl, wh_wpl, wh_yl, wh_yyxfl, wh_xhzl, wh_gjhl, wh_xw FROM record_gxb2;')
+    wh_data = cur.fetchall()
+    for wh in wh_data:
+        if 1 in wh:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET wh = %s WHERE ID = %s;', (1, wh[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     cur.close()
     conn.close()
 
@@ -7181,13 +7196,17 @@ def clean_gxb():
                 conn.rollback()
                 break
 
-    conn.commit()
     cur.close()
     conn.close()
 
 
 if __name__ == '__main__':
     # 数据移植
-    # transplant()
-    # 数据清洗
+    print('------------------------ 1.数据移植 ----------------------------------')
+    transplant()
+    # common表数据清洗
+    print('--------------------- 2.common表数据清洗 ------------------------------')
+    # clean_common()
+    # gxy表数据清洗
+    print('---------------------- 3.gxy表数据清洗 --------------------------------')
     clean_gxb()
