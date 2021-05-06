@@ -6942,6 +6942,22 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # qzzz是否有情志症状
+    cur.execute(
+        'SELECT ID, qzzz_dq, qzzz_fz, qzzz_hhxl, qzzz_jl, qzzz_jz, qzzz_jk, qzzz_jswm, qzzz_xf, qzzz_xj, qzzz_yj, '
+        'qzzz_zc FROM record_gxb2;')
+    qzzz_data = cur.fetchall()
+    for qzzz in qzzz_data:
+        if 1 in qzzz:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET qzzz = %s WHERE ID = %s;', (1, qzzz[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
