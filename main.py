@@ -7134,6 +7134,21 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # tnbbfz是否有糖尿病并发症
+    cur.execute(
+        'SELECT ID, tnbbfz_tnbsb, tnbbfz_tnbybbfz, tnbbfz_tnbz, tnbbfz_tnbdxgbfz, tnbbfz_tnbzwxgbb FROM record_gxb2;')
+    tnbbfz_data = cur.fetchall()
+    for tnbbfz in tnbbfz_data:
+        if 1 in tnbbfz:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET tnbbfz = %s WHERE ID = %s;', (1, tnbbfz[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
