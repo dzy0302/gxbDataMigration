@@ -7071,6 +7071,22 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # xgnbq是否有心功能不全
+    cur.execute(
+        'SELECT ID, xgnbq_nyha1j, xgnbq_nyha2j, xgnbq_nyha3j, xgnbq_nyha4j, xgnbq_zxs, xgnbq_yxs, xgnbq_qxs, xgnbq_hfref, '
+        'xgnbq_hfmref, xgnbq_hfpef FROM record_gxb2;')
+    xgnbq_data = cur.fetchall()
+    for xgnbq in xgnbq_data:
+        if 1 in xgnbq:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET xgnbq = %s WHERE ID = %s;', (1, xgnbq[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
