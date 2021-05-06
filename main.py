@@ -6991,6 +6991,22 @@ def clean_gxb():
                 conn.rollback()
                 break
 
+    # qtbs是否有其他不适
+    cur.execute(
+        'SELECT ID, qtbs_gjyc, qtbs_hzyw, qtbs_yht, qtbs_yy, qtbs_ygm, qtbs_th, qtbs_qz, qtbs_sz, qtbs_fl, qtbs_jdly, '
+        'qtbs_jw, qtbs_shenz, qtbs_zst, qtbs_srtz, qtbs_jsjd, qtbs_ys, qtbs_xr FROM record_gxb2;')
+    qtbs_data = cur.fetchall()
+    for qtbs in qtbs_data:
+        if 1 in qtbs:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET qtbs = %s WHERE ID = %s;', (1, qtbs[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     conn.commit()
     cur.close()
     conn.close()
