@@ -6705,6 +6705,20 @@ def clean_common():
                 conn.rollback()
                 break
 
+    # sm睡眠是否异常
+    cur.execute('SELECT ID, sm_rskn, sm_yx, sm_dm, sm_ss, sm_hz FROM record_common2;')
+    sm_data = cur.fetchall()
+    for sm in sm_data:
+        if 1 in sm:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET sm = %s WHERE ID = %s;', (1, sm[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     cur.close()
     conn.close()
 
