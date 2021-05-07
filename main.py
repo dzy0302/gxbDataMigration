@@ -6748,6 +6748,20 @@ def clean_common():
                 conn.rollback()
                 break
 
+    # sx舌形是否异常
+    cur.execute('SELECT ID, sx_ls, sx_ns, sx_pds, sx_sxs, sx_dcs, sx_lws, sx_chs FROM record_common2;')
+    sx_data = cur.fetchall()
+    for sx in sx_data:
+        if 1 in sx:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET sx = %s WHERE ID = %s;', (1, sx[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     cur.close()
     conn.close()
 
