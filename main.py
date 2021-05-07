@@ -6762,6 +6762,20 @@ def clean_common():
                 conn.rollback()
                 break
 
+    # ms面色是否异常
+    cur.execute('SELECT ID, ms_cs, ms_bs, ms_hus, ms_qs, ms_hes FROM record_common2;')
+    ms_data = cur.fetchall()
+    for ms in ms_data:
+        if 1 in ms:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET ms = %s WHERE ID = %s;', (1, ms[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     cur.close()
     conn.close()
 
