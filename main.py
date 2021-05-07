@@ -6691,6 +6691,20 @@ def clean_common():
                 conn.rollback()
                 break
 
+    # qx情绪是否异常
+    cur.execute('SELECT ID, qx_jz, qx_yn, qx_xf, qx_dsdl FROM record_common2;')
+    qx_data = cur.fetchall()
+    for qx in qx_data:
+        if 1 in qx:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET qx = %s WHERE ID = %s;', (1, qx[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     cur.close()
     conn.close()
 
