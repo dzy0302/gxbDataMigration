@@ -6733,6 +6733,21 @@ def clean_common():
                 conn.rollback()
                 break
 
+    # db大便是否异常
+    cur.execute('SELECT ID, db_ys, db_zdgy, db_zdxsy, db_zdzrbcx, db_zdnnbs, db_zdwgbh, db_zdtjbt, db_zdjyny, db_bggmzr, '
+                'db_bgljhz, db_bgpbbs, db_bgjpyb FROM record_common2;')
+    db_data = cur.fetchall()
+    for db in db_data:
+        if 1 in db:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET db = %s WHERE ID = %s;', (1, db[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     cur.close()
     conn.close()
 
