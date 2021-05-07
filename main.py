@@ -6804,6 +6804,20 @@ def clean_common():
                 conn.rollback()
                 break
 
+    # wgmz五官目眦是否异常
+    cur.execute('SELECT ID, wgmz_mzdb, wgmz_mzhz, wgmz_mzkl FROM record_common2;')
+    wgmz_data = cur.fetchall()
+    for wgmz in wgmz_data:
+        if 1 in wgmz:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET wgmz = %s WHERE ID = %s;', (1, wgmz[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     cur.close()
     conn.close()
 
