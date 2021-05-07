@@ -6776,6 +6776,20 @@ def clean_common():
                 conn.rollback()
                 break
 
+    # wgbj五官白睛是否异常
+    cur.execute('SELECT ID, wgbj_mc, wgbj_mh, wgbj_bjzz, wgbj_bjwz, wgbj_bjjj, wgbj_mzjq FROM record_common2;')
+    wgbj_data = cur.fetchall()
+    for wgbj in wgbj_data:
+        if 1 in wgbj:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET wgbj = %s WHERE ID = %s;', (1, wgbj[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
     cur.close()
     conn.close()
 
