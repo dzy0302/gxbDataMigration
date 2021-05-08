@@ -41,6 +41,9 @@ def get_conn():
 
 
 def transplant():
+
+    error_stop = False
+
     conn = get_conn()
     cur = conn.cursor()
 
@@ -129,7 +132,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '室上性心动过速':
                 try:
                     cur.execute(
@@ -138,7 +142,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '室性心动过速':
                 try:
                     cur.execute(
@@ -147,7 +152,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '室性心动过速':
                 try:
                     cur.execute(
@@ -156,7 +162,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心房扑动':
                 try:
                     cur.execute(
@@ -165,7 +172,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心房颤动':
                 try:
                     cur.execute(
@@ -174,7 +182,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '房室交界性逸搏心律':
                 try:
                     cur.execute(
@@ -183,7 +192,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '心律_传导阻滞：':
             if orgin[14] == 'Ⅰ度房室传导阻滞':
                 try:
@@ -193,7 +203,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'Ⅱ度Ⅰ型房室传导阻滞':
                 try:
                     cur.execute(
@@ -202,7 +213,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'Ⅱ度Ⅱ型房室传导阻滞':
                 try:
                     cur.execute(
@@ -211,7 +223,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'Ⅲ度房室传导阻滞:':
                 try:
                     cur.execute(
@@ -220,7 +233,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '心律_期前收缩：':
             if orgin[14] == '房性期前收缩':
                 try:
@@ -230,7 +244,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '房室交界性期前收缩':
                 try:
                     cur.execute(
@@ -239,7 +254,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '室性期前收缩':
                 try:
                     cur.execute(
@@ -248,7 +264,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         # if orgin[12] == '平均心率：':
         #     try:
         #         cur.execute(
@@ -268,7 +285,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '恶寒':
                 try:
                     cur.execute(
@@ -277,7 +295,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '恶风':
                 try:
                     cur.execute(
@@ -286,7 +305,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '寒战':
                 try:
                     cur.execute(
@@ -295,7 +315,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '发冷':
                 try:
                     cur.execute(
@@ -304,7 +325,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             # if orgin[14] == '身冷':
             #     try:
             #         cur.execute(
@@ -322,7 +344,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '四肢不温':
                 try:
                     cur.execute(
@@ -331,7 +354,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '身大寒':
                 try:
                     cur.execute(
@@ -340,7 +364,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头冷':
                 try:
                     cur.execute(
@@ -349,7 +374,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '背冷':
                 try:
                     cur.execute(
@@ -358,7 +384,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心中寒':
                 try:
                     cur.execute(
@@ -367,7 +394,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '腹冷':
                 try:
                     cur.execute(
@@ -376,7 +404,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胃中寒冷':
                 try:
                     cur.execute(
@@ -385,7 +414,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胃怕凉':
                 try:
                     cur.execute(
@@ -394,7 +424,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '腰冷':
                 try:
                     cur.execute(
@@ -403,7 +434,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '腰膝酸冷':
                 try:
                     cur.execute(
@@ -412,7 +444,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '腰以下发凉':
                 try:
                     cur.execute(
@@ -421,7 +454,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '形寒肢冷':
                 try:
                     cur.execute(
@@ -430,7 +464,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '骨节寒冷':
                 try:
                     cur.execute(
@@ -439,7 +474,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '喜温':
                 try:
                     cur.execute(
@@ -448,7 +484,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '问热_问热:':
             if orgin[14] == '畏热':
                 try:
@@ -458,7 +495,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '恶热':
                 try:
                     cur.execute(
@@ -467,7 +505,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '烦热':
                 try:
                     cur.execute(
@@ -476,7 +515,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '五心烦热':
                 try:
                     cur.execute(
@@ -485,7 +525,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '手足心热':
                 try:
                     cur.execute(
@@ -494,7 +535,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '潮热':
                 try:
                     cur.execute(
@@ -503,7 +545,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '骨蒸潮热':
                 try:
                     cur.execute(
@@ -512,7 +555,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '午后夜间潮热':
                 try:
                     cur.execute(
@@ -521,7 +565,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '壮热':
                 try:
                     cur.execute(
@@ -530,7 +575,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '日脯潮热':
                 try:
                     cur.execute(
@@ -539,7 +585,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '身热夜甚':
                 try:
                     cur.execute(
@@ -548,7 +595,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头热':
                 try:
                     cur.execute(
@@ -557,7 +605,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头面热':
                 try:
                     cur.execute(
@@ -566,7 +615,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胸中烦热':
                 try:
                     cur.execute(
@@ -575,7 +625,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心中烦热':
                 try:
                     cur.execute(
@@ -584,7 +635,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胸中有热':
                 try:
                     cur.execute(
@@ -593,7 +645,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '背热':
                 try:
                     cur.execute(
@@ -602,7 +655,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胃中有热':
                 try:
                     cur.execute(
@@ -611,7 +665,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '手背热':
                 try:
                     cur.execute(
@@ -620,7 +675,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '夜热早凉':
                 try:
                     cur.execute(
@@ -629,7 +685,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '问汗_问汗:':
             if orgin[14] == '自汗':
                 try:
@@ -639,7 +696,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '盗汗':
                 try:
                     cur.execute(
@@ -648,7 +706,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '大汗':
                 try:
                     cur.execute(
@@ -657,7 +716,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '多汗':
                 try:
                     cur.execute(
@@ -666,7 +726,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '汗少':
                 try:
                     cur.execute(
@@ -675,7 +736,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '汗闭':
                 try:
                     cur.execute(
@@ -684,7 +746,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '汗臭':
                 try:
                     cur.execute(
@@ -693,7 +756,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '冷汗':
                 try:
                     cur.execute(
@@ -702,7 +766,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '热汗':
                 try:
                     cur.execute(
@@ -711,7 +776,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '黄汗':
                 try:
                     cur.execute(
@@ -720,7 +786,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '油汗':
                 try:
                     cur.execute(
@@ -729,7 +796,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '汗沾衣':
                 try:
                     cur.execute(
@@ -738,7 +806,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '绝汗':
                 try:
                     cur.execute(
@@ -747,7 +816,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '战汗':
                 try:
                     cur.execute(
@@ -756,7 +826,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '食已汗出':
                 try:
                     cur.execute(
@@ -765,7 +836,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '醒后汗出':
                 try:
                     cur.execute(
@@ -774,7 +846,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '额汗':
                 try:
                     cur.execute(
@@ -783,7 +856,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头汗':
                 try:
                     cur.execute(
@@ -792,7 +866,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胸汗':
                 try:
                     cur.execute(
@@ -801,7 +876,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '身汗':
                 try:
                     cur.execute(
@@ -810,7 +886,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '手足心汗':
                 try:
                     cur.execute(
@@ -819,7 +896,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '烘热汗出':
                 try:
                     cur.execute(
@@ -828,7 +906,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '渴饮症状_渴饮症状:':
             if orgin[14] == '口干':
                 try:
@@ -838,7 +917,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '烦渴':
                 try:
                     cur.execute(
@@ -847,7 +927,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口渴欲饮':
                 try:
                     cur.execute(
@@ -856,7 +937,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '渴喜热饮':
                 try:
                     cur.execute(
@@ -865,7 +947,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口渴多饮':
                 try:
                     cur.execute(
@@ -874,7 +957,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '渴喜冷饮':
                 try:
                     cur.execute(
@@ -883,7 +967,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口不渴饮':
                 try:
                     cur.execute(
@@ -892,7 +977,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '渴不欲饮':
                 try:
                     cur.execute(
@@ -901,7 +987,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '渴不多饮':
                 try:
                     cur.execute(
@@ -910,7 +997,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '不欲饮':
                 try:
                     cur.execute(
@@ -919,7 +1007,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '饮水多':
                 try:
                     cur.execute(
@@ -928,7 +1017,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '饮水则呛':
                 try:
                     cur.execute(
@@ -937,7 +1027,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '引入即吐':
                 try:
                     cur.execute(
@@ -946,7 +1037,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '喜冷饮':
                 try:
                     cur.execute(
@@ -955,7 +1047,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '喜热饮':
                 try:
                     cur.execute(
@@ -964,7 +1057,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '食纳症状_食纳症状:':
             if orgin[14] == '食欲减退':
                 try:
@@ -974,7 +1068,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '厌食':
                 try:
                     cur.execute(
@@ -983,7 +1078,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '饥不欲食':
                 try:
                     cur.execute(
@@ -992,7 +1088,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '食少':
                 try:
                     cur.execute(
@@ -1001,7 +1098,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '饮食过度':
                 try:
                     cur.execute(
@@ -1010,7 +1108,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '消谷善饥':
                 try:
                     cur.execute(
@@ -1019,7 +1118,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '恶闻食臭':
                 try:
                     cur.execute(
@@ -1028,7 +1128,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '夜食':
                 try:
                     cur.execute(
@@ -1037,7 +1138,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '口味症状_口味症状:':
             if orgin[14] == '口淡':
                 try:
@@ -1047,7 +1149,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口甜':
                 try:
                     cur.execute(
@@ -1056,7 +1159,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口黏腻':
                 try:
                     cur.execute(
@@ -1065,7 +1169,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口酸':
                 try:
                     cur.execute(
@@ -1074,7 +1179,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口苦':
                 try:
                     cur.execute(
@@ -1083,7 +1189,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口涩':
                 try:
                     cur.execute(
@@ -1092,7 +1199,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口咸':
                 try:
                     cur.execute(
@@ -1101,7 +1209,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口香':
                 try:
                     cur.execute(
@@ -1110,7 +1219,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口辛':
                 try:
                     cur.execute(
@@ -1119,7 +1229,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '有尿味':
                 try:
                     cur.execute(
@@ -1128,7 +1239,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口气浊臭':
                 try:
                     cur.execute(
@@ -1137,7 +1249,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '口味偏嗜_口味偏嗜:':
             if orgin[14] == '偏嗜肥甘':
                 try:
@@ -1147,7 +1260,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '偏嗜辛辣':
                 try:
                     cur.execute(
@@ -1156,7 +1270,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '偏食生冷':
                 try:
                     cur.execute(
@@ -1165,7 +1280,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '喜热食':
                 try:
                     cur.execute(
@@ -1174,7 +1290,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '喜食异物':
                 try:
                     cur.execute(
@@ -1183,7 +1300,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '睡眠症状_睡眠症状:':
             if orgin[14] == '不易入眠':
                 try:
@@ -1193,7 +1311,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '不寐':
                 try:
                     cur.execute(
@@ -1202,7 +1321,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '不能卧':
                 try:
                     cur.execute(
@@ -1211,7 +1331,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '眠而不寐':
                 try:
                     cur.execute(
@@ -1220,7 +1341,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '多梦':
                 try:
                     cur.execute(
@@ -1229,7 +1351,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '易醒':
                 try:
                     cur.execute(
@@ -1238,7 +1361,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '醒后不能再寐':
                 try:
                     cur.execute(
@@ -1247,7 +1371,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '时寐时醒':
                 try:
                     cur.execute(
@@ -1256,7 +1381,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '夜卧不安':
                 try:
                     cur.execute(
@@ -1265,7 +1391,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '嗜睡':
                 try:
                     cur.execute(
@@ -1274,7 +1401,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '食后困顿':
                 try:
                     cur.execute(
@@ -1283,7 +1411,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '鼾眠':
                 try:
                     cur.execute(
@@ -1292,7 +1421,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '睡眠倒错':
                 try:
                     cur.execute(
@@ -1301,7 +1431,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '梦言症':
                 try:
                     cur.execute(
@@ -1310,7 +1441,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '梦游':
                 try:
                     cur.execute(
@@ -1319,7 +1451,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '大便症状_便次:':
             if orgin[14] == '便秘':
                 try:
@@ -1329,7 +1462,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '泄泻':
                 try:
                     cur.execute(
@@ -1338,7 +1472,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '上吐下泻':
                 try:
                     cur.execute(
@@ -1347,7 +1482,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '五更泻':
                 try:
                     cur.execute(
@@ -1356,7 +1492,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '大便症状_便质:':
             if orgin[14] == '完谷不化':
                 try:
@@ -1366,7 +1503,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '溏结不调':
                 try:
                     cur.execute(
@@ -1375,7 +1513,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '便溏':
                 try:
                     cur.execute(
@@ -1384,7 +1523,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '大便不实':
                 try:
                     cur.execute(
@@ -1393,7 +1533,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '大便变形':
                 try:
                     cur.execute(
@@ -1402,7 +1543,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '大便质粘':
                 try:
                     cur.execute(
@@ -1411,7 +1553,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '大便质硬':
                 try:
                     cur.execute(
@@ -1420,7 +1563,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '大便水样':
                 try:
                     cur.execute(
@@ -1429,7 +1573,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '大便腥臭':
                 try:
                     cur.execute(
@@ -1438,7 +1583,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '大便臭秽':
                 try:
                     cur.execute(
@@ -1447,7 +1593,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '便血':
                 try:
                     cur.execute(
@@ -1456,7 +1603,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '大便夹泡沫':
                 try:
                     cur.execute(
@@ -1465,7 +1613,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '粪便食物残渣':
                 try:
                     cur.execute(
@@ -1474,7 +1623,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '脓血便':
                 try:
                     cur.execute(
@@ -1483,7 +1633,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '大便症状_便感:':
             if orgin[14] == '肛门灼热':
                 try:
@@ -1493,7 +1644,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '里急后重':
                 try:
                     cur.execute(
@@ -1502,7 +1654,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '排便不爽':
                 try:
                     cur.execute(
@@ -1511,7 +1664,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '便意频频':
                 try:
                     cur.execute(
@@ -1520,7 +1674,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '大便干':
                 try:
                     cur.execute(
@@ -1529,7 +1684,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '大便不通':
                 try:
                     cur.execute(
@@ -1538,7 +1694,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '泻下不爽':
                 try:
                     cur.execute(
@@ -1547,7 +1704,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '排便无力':
                 try:
                     cur.execute(
@@ -1556,7 +1714,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '泻下如注':
                 try:
                     cur.execute(
@@ -1565,7 +1724,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '大便失禁':
                 try:
                     cur.execute(
@@ -1574,7 +1734,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '大便滑脱':
                 try:
                     cur.execute(
@@ -1583,7 +1744,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             # 一般情况-大便症状-矢气 ？
         if orgin[12] == '小便症状_尿量:':
             if orgin[14] == '多尿':
@@ -1594,7 +1756,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '少尿':
                 try:
                     cur.execute(
@@ -1603,7 +1766,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '无尿':
                 try:
                     cur.execute(
@@ -1612,7 +1776,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '小便症状_尿次:':
             if orgin[14] == '尿频':
                 try:
@@ -1622,7 +1787,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '夜尿多':
                 try:
                     cur.execute(
@@ -1631,7 +1797,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '遗尿':
                 try:
                     cur.execute(
@@ -1640,7 +1807,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '尿潴留':
                 try:
                     cur.execute(
@@ -1649,7 +1817,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '小便症状_尿感:':
             if orgin[14] == '小便刺痛':
                 try:
@@ -1659,7 +1828,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '小便灼热':
                 try:
                     cur.execute(
@@ -1668,7 +1838,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '小便不利':
                 try:
                     cur.execute(
@@ -1677,7 +1848,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '小便不通':
                 try:
                     cur.execute(
@@ -1686,7 +1858,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '小便无力':
                 try:
                     cur.execute(
@@ -1695,7 +1868,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '小便失禁':
                 try:
                     cur.execute(
@@ -1704,7 +1878,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '小便先少后多':
                 try:
                     cur.execute(
@@ -1713,7 +1888,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '小便中断':
                 try:
                     cur.execute(
@@ -1722,7 +1898,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '尿急':
                 try:
                     cur.execute(
@@ -1731,7 +1908,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '尿涩':
                 try:
                     cur.execute(
@@ -1740,7 +1918,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '尿痛':
                 try:
                     cur.execute(
@@ -1749,7 +1928,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '尿后余沥':
                 try:
                     cur.execute(
@@ -1758,7 +1938,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '小便症状_尿质:':
             if orgin[14] == '小便短黄':
                 try:
@@ -1768,7 +1949,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '小便短少':
                 try:
                     cur.execute(
@@ -1777,7 +1959,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '小便清':
                 try:
                     cur.execute(
@@ -1786,7 +1969,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '小便清长':
                 try:
                     cur.execute(
@@ -1795,7 +1979,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '小便有泡沫':
                 try:
                     cur.execute(
@@ -1804,7 +1989,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '小便夹精':
                 try:
                     cur.execute(
@@ -1813,7 +1999,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '小便浑浊':
                 try:
                     cur.execute(
@@ -1822,7 +2009,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '尿臭':
                 try:
                     cur.execute(
@@ -1831,7 +2019,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '尿中砂石':
                 try:
                     cur.execute(
@@ -1840,7 +2029,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '尿血':
                 try:
                     cur.execute(
@@ -1849,7 +2039,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '平素情志_平素情志：':
             if orgin[14] == '急躁易怒':
                 try:
@@ -1859,7 +2050,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '善悲':
                 try:
                     cur.execute(
@@ -1868,7 +2060,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '善惊':
                 try:
                     cur.execute(
@@ -1877,7 +2070,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '善恐':
                 try:
                     cur.execute(
@@ -1886,7 +2080,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '善疑':
                 try:
                     cur.execute(
@@ -1895,7 +2090,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '善忧思':
                 try:
                     cur.execute(
@@ -1904,7 +2100,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '自卑':
                 try:
                     cur.execute(
@@ -1913,7 +2110,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '抑郁':
                 try:
                     cur.execute(
@@ -1922,7 +2120,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         # 中医病机 ？
         # 中药处方 ？
         # 主症
@@ -1935,7 +2134,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '情志':
                 try:
                     cur.execute(
@@ -1944,7 +2144,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '劳力':
                 try:
                     cur.execute(
@@ -1953,7 +2154,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '劳神':
                 try:
                     cur.execute(
@@ -1962,7 +2164,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '食积':
                 try:
                     cur.execute(
@@ -1971,7 +2174,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '饮酒':
                 try:
                     cur.execute(
@@ -1980,7 +2184,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '主症_主症：':
             if orgin[14] == '头晕':
                 try:
@@ -1990,7 +2195,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头痛':
                 try:
                     cur.execute(
@@ -1999,7 +2205,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胸闷':
                 try:
                     cur.execute(
@@ -2008,7 +2215,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心悸':
                 try:
                     cur.execute(
@@ -2017,7 +2225,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '浮肿':
                 try:
                     cur.execute(
@@ -2026,7 +2235,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '乏力':
                 try:
                     cur.execute(
@@ -2035,7 +2245,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '眩晕':
                 try:
                     cur.execute(
@@ -2044,7 +2255,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头重':
                 try:
                     cur.execute(
@@ -2053,7 +2265,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '背痛':
                 try:
                     cur.execute(
@@ -2062,7 +2275,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '喘促':
                 try:
                     cur.execute(
@@ -2071,7 +2285,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         # 伴随症状
         if orgin[12] == '伴随症状_五官症状:':
             if orgin[14] == '耳聋':
@@ -2082,7 +2297,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '耳鸣':
                 try:
                     cur.execute(
@@ -2091,7 +2307,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '听力减退':
                 try:
                     cur.execute(
@@ -2100,7 +2317,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '流涎':
                 try:
                     cur.execute(
@@ -2109,7 +2327,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '鼻衄':
                 try:
                     cur.execute(
@@ -2118,7 +2337,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '流涕':
                 try:
                     cur.execute(
@@ -2127,7 +2347,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '目痒':
                 try:
                     cur.execute(
@@ -2136,7 +2357,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '目涩':
                 try:
                     cur.execute(
@@ -2145,7 +2367,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             # 目昏/头昏 ？
             if orgin[14] == '目昏':
                 try:
@@ -2155,7 +2378,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '少泪':
                 try:
                     cur.execute(
@@ -2164,7 +2388,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '目干':
                 try:
                     cur.execute(
@@ -2173,7 +2398,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '目痛':
                 try:
                     cur.execute(
@@ -2182,7 +2408,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '舌干':
                 try:
                     cur.execute(
@@ -2191,7 +2418,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '唇干':
                 try:
                     cur.execute(
@@ -2200,7 +2428,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口唇焦裂':
                 try:
                     cur.execute(
@@ -2209,7 +2438,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口唇脱屑':
                 try:
                     cur.execute(
@@ -2218,7 +2448,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '齿衄':
                 try:
                     cur.execute(
@@ -2227,7 +2458,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '舌衄':
                 try:
                     cur.execute(
@@ -2236,7 +2468,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '牙痛':
                 try:
                     cur.execute(
@@ -2245,7 +2478,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '伴随症状_头部症状:':
             if orgin[14] == '头晕':
                 try:
@@ -2255,7 +2489,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头项僵':
                 try:
                     cur.execute(
@@ -2264,7 +2499,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '眩晕':
                 try:
                     cur.execute(
@@ -2273,7 +2509,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头昏':
                 try:
                     cur.execute(
@@ -2282,7 +2519,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头紧':
                 try:
                     cur.execute(
@@ -2291,7 +2529,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头胀':
                 try:
                     cur.execute(
@@ -2300,7 +2539,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头身困重':
                 try:
                     cur.execute(
@@ -2309,7 +2549,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头重':
                 try:
                     cur.execute(
@@ -2318,7 +2559,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头重脚轻':
                 try:
                     cur.execute(
@@ -2327,7 +2569,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头重如裹':
                 try:
                     cur.execute(
@@ -2336,7 +2579,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '脑鸣':
                 try:
                     cur.execute(
@@ -2345,7 +2589,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头痛':
                 try:
                     cur.execute(
@@ -2354,7 +2599,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头隐痛':
                 try:
                     cur.execute(
@@ -2363,7 +2609,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头痛时作':
                 try:
                     cur.execute(
@@ -2372,7 +2619,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头痛无休止':
                 try:
                     cur.execute(
@@ -2381,7 +2629,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头目胀痛':
                 try:
                     cur.execute(
@@ -2390,7 +2639,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头脑空痛':
                 try:
                     cur.execute(
@@ -2399,7 +2649,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头跳痛':
                 try:
                     cur.execute(
@@ -2408,7 +2659,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头痛如蒙':
                 try:
                     cur.execute(
@@ -2417,7 +2669,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头刺痛':
                 try:
                     cur.execute(
@@ -2426,7 +2679,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头项强痛':
                 try:
                     cur.execute(
@@ -2435,7 +2689,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             # 巅顶头痛 ？
             # 额头痛 ？
             # 偏头痛 ？
@@ -2448,7 +2703,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胸骨压痛':
                 try:
                     cur.execute(
@@ -2457,7 +2713,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胸闷':
                 try:
                     cur.execute(
@@ -2466,7 +2723,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '憋气':
                 try:
                     cur.execute(
@@ -2475,7 +2733,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '气短':
                 try:
                     cur.execute(
@@ -2484,7 +2743,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胸部膨满':
                 try:
                     cur.execute(
@@ -2493,7 +2753,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心胸气逆':
                 try:
                     cur.execute(
@@ -2502,7 +2763,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '气上冲心':
                 try:
                     cur.execute(
@@ -2511,7 +2773,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心悸':
                 try:
                     cur.execute(
@@ -2520,7 +2783,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心慌':
                 try:
                     cur.execute(
@@ -2529,7 +2793,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心律不齐':
                 try:
                     cur.execute(
@@ -2538,7 +2803,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心跳加快':
                 try:
                     cur.execute(
@@ -2547,7 +2813,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胁痛':
                 try:
                     cur.execute(
@@ -2556,7 +2823,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胁胀':
                 try:
                     cur.execute(
@@ -2565,7 +2833,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胸胁痛':
                 try:
                     cur.execute(
@@ -2574,7 +2843,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胸胁胀痛':
                 try:
                     cur.execute(
@@ -2583,7 +2853,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胸胁窜痛':
                 try:
                     cur.execute(
@@ -2592,7 +2863,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '背痛':
                 try:
                     cur.execute(
@@ -2601,7 +2873,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胸背痛':
                 try:
                     cur.execute(
@@ -2610,7 +2883,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '伴随症状_呼吸症状:':
             if orgin[14] == '咳嗽':
                 try:
@@ -2620,7 +2894,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '晨起咳嗽':
                 try:
                     cur.execute(
@@ -2629,7 +2904,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '夜间咳嗽':
                 try:
                     cur.execute(
@@ -2638,7 +2914,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '干咳':
                 try:
                     cur.execute(
@@ -2647,7 +2924,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '呛咳':
                 try:
                     cur.execute(
@@ -2656,7 +2934,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '咳声嘶哑':
                 try:
                     cur.execute(
@@ -2665,7 +2944,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '咳声重浊':
                 try:
                     cur.execute(
@@ -2674,7 +2954,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '咳嗽声低':
                 try:
                     cur.execute(
@@ -2683,7 +2964,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '喉中痰鸣':
                 try:
                     cur.execute(
@@ -2692,7 +2974,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '气喘':
                 try:
                     cur.execute(
@@ -2701,7 +2984,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '咳喘':
                 try:
                     cur.execute(
@@ -2710,7 +2994,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '气短':
                 try:
                     cur.execute(
@@ -2719,7 +3004,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '太息':
                 try:
                     cur.execute(
@@ -2728,7 +3014,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '气粗而喘':
                 try:
                     cur.execute(
@@ -2737,7 +3024,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '呼多吸少':
                 try:
                     cur.execute(
@@ -2746,7 +3034,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '肩息':
                 try:
                     cur.execute(
@@ -2755,7 +3044,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '哮鸣':
                 try:
                     cur.execute(
@@ -2764,7 +3054,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '咳血':
                 try:
                     cur.execute(
@@ -2773,7 +3064,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '咯血':
                 try:
                     cur.execute(
@@ -2782,7 +3074,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '伴随症状_咳痰症状:':
             if orgin[14] == '咳痰':
                 try:
@@ -2792,7 +3085,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '痰多':
                 try:
                     cur.execute(
@@ -2801,7 +3095,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '痰难咯':
                 try:
                     cur.execute(
@@ -2810,7 +3105,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '痰少':
                 try:
                     cur.execute(
@@ -2819,7 +3115,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '无痰':
                 try:
                     cur.execute(
@@ -2828,7 +3125,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '痰色白':
                 try:
                     cur.execute(
@@ -2837,7 +3135,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '痰色黄':
                 try:
                     cur.execute(
@@ -2846,7 +3145,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '痰清稀':
                 try:
                     cur.execute(
@@ -2855,7 +3155,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '痰质粘':
                 try:
                     cur.execute(
@@ -2864,7 +3165,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '吐涎沫':
                 try:
                     cur.execute(
@@ -2873,7 +3175,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '痰中带血':
                 try:
                     cur.execute(
@@ -2882,7 +3185,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '痰带泡沫':
                 try:
                     cur.execute(
@@ -2891,7 +3195,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '咳吐脓痰':
                 try:
                     cur.execute(
@@ -2900,7 +3205,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '伴随症状_腹部症状:':
             if orgin[14] == '脘痞':
                 try:
@@ -2910,7 +3216,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '恶心':
                 try:
                     cur.execute(
@@ -2919,7 +3226,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '呕吐':
                 try:
                     cur.execute(
@@ -2928,7 +3236,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '吞酸':
                 try:
                     cur.execute(
@@ -2937,7 +3246,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '嗳气':
                 try:
                     cur.execute(
@@ -2946,7 +3256,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '泛酸':
                 try:
                     cur.execute(
@@ -2955,7 +3266,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '吐酸':
                 try:
                     cur.execute(
@@ -2964,7 +3276,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '干呕':
                 try:
                     cur.execute(
@@ -2973,7 +3286,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '吐血':
                 try:
                     cur.execute(
@@ -2982,7 +3296,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '呃逆':
                 try:
                     cur.execute(
@@ -2991,7 +3306,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '哕逆':
                 try:
                     cur.execute(
@@ -3000,7 +3316,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '嗳腐':
                 try:
                     cur.execute(
@@ -3009,7 +3326,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '嘈杂':
                 try:
                     cur.execute(
@@ -3018,7 +3336,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '反胃':
                 try:
                     cur.execute(
@@ -3027,7 +3346,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胃空感':
                 try:
                     cur.execute(
@@ -3036,7 +3356,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胃脘拒按':
                 try:
                     cur.execute(
@@ -3045,7 +3366,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胃脘痛':
                 try:
                     cur.execute(
@@ -3054,7 +3376,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '腹痛':
                 try:
                     cur.execute(
@@ -3063,7 +3386,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '腹胀':
                 try:
                     cur.execute(
@@ -3072,7 +3396,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '腹气下坠':
                 try:
                     cur.execute(
@@ -3081,7 +3406,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '烧心':
                 try:
                     cur.execute(
@@ -3090,7 +3416,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '伴随症状_肢体症状:':
             if orgin[14] == '肢体震颤':
                 try:
@@ -3100,7 +3427,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '肢体刺痛':
                 try:
                     cur.execute(
@@ -3109,7 +3437,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '肢体酸痛':
                 try:
                     cur.execute(
@@ -3118,7 +3447,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '四肢疼痛':
                 try:
                     cur.execute(
@@ -3127,7 +3457,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '肩痛':
                 try:
                     cur.execute(
@@ -3136,7 +3467,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '臂痛':
                 try:
                     cur.execute(
@@ -3145,7 +3477,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '掌中热痛':
                 try:
                     cur.execute(
@@ -3154,7 +3487,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '肢端冷痛':
                 try:
                     cur.execute(
@@ -3163,7 +3497,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '腿痛':
                 try:
                     cur.execute(
@@ -3172,7 +3507,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '下肢灼痛':
                 try:
                     cur.execute(
@@ -3181,7 +3517,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '足跟痛':
                 try:
                     cur.execute(
@@ -3190,7 +3527,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '足痛':
                 try:
                     cur.execute(
@@ -3199,7 +3537,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '伴随症状_情志症状:':
             # 不安 ？
             if orgin[14] == '胆怯':
@@ -3210,7 +3549,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '烦躁':
                 try:
                     cur.execute(
@@ -3219,7 +3559,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '恍惚心乱':
                 try:
                     cur.execute(
@@ -3228,7 +3569,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '焦虑':
                 try:
                     cur.execute(
@@ -3237,7 +3579,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '紧张':
                 try:
                     cur.execute(
@@ -3246,7 +3589,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '惊恐':
                 try:
                     cur.execute(
@@ -3255,7 +3599,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '精神萎靡':
                 try:
                     cur.execute(
@@ -3264,7 +3609,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心烦':
                 try:
                     cur.execute(
@@ -3273,7 +3619,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心急':
                 try:
                     cur.execute(
@@ -3282,7 +3629,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '夜惊':
                 try:
                     cur.execute(
@@ -3291,7 +3639,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '怔忡':
                 try:
                     cur.execute(
@@ -3300,7 +3649,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '伴随症状_麻木症状:':
             if orgin[14] == '麻木':
                 try:
@@ -3310,7 +3660,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '头皮麻木':
                 try:
                     cur.execute(
@@ -3319,7 +3670,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '面部麻木':
                 try:
                     cur.execute(
@@ -3328,7 +3680,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口不仁':
                 try:
                     cur.execute(
@@ -3337,7 +3690,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '舌麻':
                 try:
                     cur.execute(
@@ -3346,7 +3700,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '肌肤麻木':
                 try:
                     cur.execute(
@@ -3355,7 +3710,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '肌肉麻木':
                 try:
                     cur.execute(
@@ -3364,7 +3720,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '少腹不仁':
                 try:
                     cur.execute(
@@ -3373,7 +3730,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '肢体麻木':
                 try:
                     cur.execute(
@@ -3382,7 +3740,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '四肢麻木':
                 try:
                     cur.execute(
@@ -3391,7 +3750,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '半身麻木':
                 try:
                     cur.execute(
@@ -3400,7 +3760,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '上肢麻木':
                 try:
                     cur.execute(
@@ -3409,7 +3770,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '下肢麻木':
                 try:
                     cur.execute(
@@ -3418,7 +3780,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '手足麻木':
                 try:
                     cur.execute(
@@ -3427,7 +3790,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '手麻木':
                 try:
                     cur.execute(
@@ -3436,7 +3800,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '足麻木':
                 try:
                     cur.execute(
@@ -3445,7 +3810,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '右上肢麻木':
                 try:
                     cur.execute(
@@ -3454,7 +3820,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '左上肢麻木':
                 try:
                     cur.execute(
@@ -3463,7 +3830,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '伴随症状_浮肿症状:':
             if orgin[14] == '全身浮肿':
                 try:
@@ -3473,7 +3841,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '身体肿重':
                 try:
                     cur.execute(
@@ -3482,7 +3851,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '身微肿':
                 try:
                     cur.execute(
@@ -3491,7 +3861,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '颜面浮肿':
                 try:
                     cur.execute(
@@ -3500,7 +3871,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '手足浮肿':
                 try:
                     cur.execute(
@@ -3509,7 +3881,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '四肢浮肿':
                 try:
                     cur.execute(
@@ -3518,7 +3891,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '下肢浮肿':
                 try:
                     cur.execute(
@@ -3527,7 +3901,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '腰以下肿甚':
                 try:
                     cur.execute(
@@ -3536,7 +3911,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '伴随症状_其他不适:':
             if orgin[14] == '感觉异常':
                 try:
@@ -3546,7 +3922,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '喉中异物':
                 try:
                     cur.execute(
@@ -3555,7 +3932,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '咽喉痛':
                 try:
                     cur.execute(
@@ -3564,7 +3942,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '咽痒':
                 try:
                     cur.execute(
@@ -3573,7 +3952,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '易感冒':
                 try:
                     cur.execute(
@@ -3582,7 +3962,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '痰核':
                 try:
                     cur.execute(
@@ -3591,7 +3972,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '气坠':
                 try:
                     cur.execute(
@@ -3600,7 +3982,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '水肿':
                 try:
                     cur.execute(
@@ -3609,7 +3992,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '乏力':
                 try:
                     cur.execute(
@@ -3618,7 +4002,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '倦怠懒言':
                 try:
                     cur.execute(
@@ -3627,7 +4012,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '健忘':
                 try:
                     cur.execute(
@@ -3636,7 +4022,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '身重':
                 try:
                     cur.execute(
@@ -3645,7 +4032,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '周身痛':
                 try:
                     cur.execute(
@@ -3654,7 +4042,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '身热疼重':
                 try:
                     cur.execute(
@@ -3663,7 +4052,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '脐上悸动':
                 try:
                     cur.execute(
@@ -3672,7 +4062,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '腰酸':
                 try:
                     cur.execute(
@@ -3681,7 +4072,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '膝软':
                 try:
                     cur.execute(
@@ -3690,7 +4082,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         # 其他
         if orgin[12] == 'NT-proBNP:':
             try:
@@ -3700,7 +4093,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # BNP ？
         if orgin[12] == '超敏C反应蛋白（hs-CRP）：':
             try:
@@ -3710,7 +4104,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # C反应蛋白（CRP）: ？
         if orgin[12] == '同型半胱氨酸（Hcy）:':
             try:
@@ -3720,7 +4115,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # 冠心病
         # 心绞痛发作频率_心绞痛发作频率： ？
         if orgin[12] == '心肌梗死病史_最后一次发病累及部位：':
@@ -3732,7 +4128,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '前间壁':
                 try:
                     cur.execute(
@@ -3741,7 +4138,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '下壁':
                 try:
                     cur.execute(
@@ -3750,7 +4148,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '侧壁':
                 try:
                     cur.execute(
@@ -3759,7 +4158,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '高侧壁':
                 try:
                     cur.execute(
@@ -3768,7 +4168,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '后壁':
                 try:
                     cur.execute(
@@ -3777,7 +4178,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '右室':
                 try:
                     cur.execute(
@@ -3786,7 +4188,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         # 心肌梗死 ？
         # 末次心肌梗死发生于： ？
         if orgin[12] == '心肌梗死病史_心肌梗死类型：':
@@ -3798,7 +4201,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '非ST段抬高型心肌梗死':
                 try:
                     cur.execute(
@@ -3807,7 +4211,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         # 手术次数 ？
         # 最近的一次手术日期 ？
         # 凝血 ？
@@ -3822,7 +4227,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '室上性心动过速':
                 try:
                     cur.execute(
@@ -3831,7 +4237,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '室性心动过速':
                 try:
                     cur.execute(
@@ -3840,7 +4247,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心房扑动':
                 try:
                     cur.execute(
@@ -3849,7 +4257,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心房颤动':
                 try:
                     cur.execute(
@@ -3858,7 +4267,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '房室交界性逸搏心律':
                 try:
                     cur.execute(
@@ -3867,7 +4277,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '心电图_传导阻滞：':
             if orgin[14] == 'Ⅰ度房室传导阻滞':
                 try:
@@ -3877,7 +4288,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'Ⅱ度Ⅰ型房室传导阻滞':
                 try:
                     cur.execute(
@@ -3886,7 +4298,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'Ⅱ度Ⅱ型房室传导阻滞':
                 try:
                     cur.execute(
@@ -3895,7 +4308,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'Ⅲ度房室传导阻滞':
                 try:
                     cur.execute(
@@ -3904,7 +4318,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '心电图_期前收缩:':
             if orgin[14] == '房性期前收缩':
                 try:
@@ -3914,7 +4329,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '房室交界性期前收缩':
                 try:
                     cur.execute(
@@ -3923,7 +4339,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '室性期前收缩':
                 try:
                     cur.execute(
@@ -3932,7 +4349,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '心率：':
             try:
                 cur.execute(
@@ -3941,7 +4359,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == 'QTc间期：':
             try:
                 cur.execute(
@@ -3950,7 +4369,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # 心肌酶
         if orgin[12] == '超敏肌钙蛋白T（hs-TnT）':
             try:
@@ -3960,7 +4380,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # 心肌酶-超敏肌钙蛋白I（hs-TnI） ？
         if orgin[12] == '肌酸激酶同工酶（CKMB）:':
             try:
@@ -3970,7 +4391,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '肌红蛋白（MYO）：':
             try:
                 cur.execute(
@@ -3979,7 +4401,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # 月经史 ？
         # 望五官
         if orgin[12] == '五官_白睛所见:':
@@ -3991,7 +4414,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '目黄':
                 try:
                     cur.execute(
@@ -4000,7 +4424,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '白睛肿胀':
                 try:
                     cur.execute(
@@ -4009,7 +4434,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '白睛微肿':
                 try:
                     cur.execute(
@@ -4018,7 +4444,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '白睛结节':
                 try:
                     cur.execute(
@@ -4027,7 +4454,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '目珠俱青':
                 try:
                     cur.execute(
@@ -4036,7 +4464,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '五官_黑睛所见:':
             if orgin[14] == '黑镜浑浊':
                 try:
@@ -4046,7 +4475,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '黑睛粗糙':
                 try:
                     cur.execute(
@@ -4055,7 +4485,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '黑睛生翳':
                 try:
                     cur.execute(
@@ -4064,7 +4495,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '黑睛色白':
                 try:
                     cur.execute(
@@ -4073,7 +4505,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '黑睛色红':
                 try:
                     cur.execute(
@@ -4082,7 +4515,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '五官_目眦所见:':
             if orgin[14] == '目眦淡白':
                 try:
@@ -4092,7 +4526,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '目眦红肿':
                 try:
                     cur.execute(
@@ -4101,7 +4536,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '目眦溃烂':
                 try:
                     cur.execute(
@@ -4110,7 +4546,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '五官_眼脸所见:':
             if orgin[14] == '眼脸充血':
                 try:
@@ -4120,7 +4557,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '眼睑浮肿':
                 try:
                     cur.execute(
@@ -4129,7 +4567,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '眼睑色淡':
                 try:
                     cur.execute(
@@ -4138,7 +4577,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '眼睑下垂':
                 try:
                     cur.execute(
@@ -4147,7 +4587,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胞睑红肿':
                 try:
                     cur.execute(
@@ -4156,7 +4597,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胞睑溃破':
                 try:
                     cur.execute(
@@ -4165,7 +4607,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胞睑丘疹':
                 try:
                     cur.execute(
@@ -4174,7 +4617,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '睑缘湿烂':
                 try:
                     cur.execute(
@@ -4183,7 +4627,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '五官_口唇所见:':
             if orgin[14] == '牙龈紫暗':
                 try:
@@ -4193,7 +4638,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口唇色暗':
                 try:
                     cur.execute(
@@ -4202,7 +4648,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口唇赤烂':
                 try:
                     cur.execute(
@@ -4211,7 +4658,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口唇红肿':
                 try:
                     cur.execute(
@@ -4220,7 +4668,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口唇淡白':
                 try:
                     cur.execute(
@@ -4229,7 +4678,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             # 口唇苍白 ？
             if orgin[14] == '口唇颤动':
                 try:
@@ -4239,7 +4689,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '唇舌青紫':
                 try:
                     cur.execute(
@@ -4248,7 +4699,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '唇舌色暗':
                 try:
                     cur.execute(
@@ -4257,7 +4709,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口中生疮':
                 try:
                     cur.execute(
@@ -4266,7 +4719,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口腔赤烂':
                 try:
                     cur.execute(
@@ -4275,7 +4729,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口角皲裂':
                 try:
                     cur.execute(
@@ -4284,7 +4739,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口角红肿':
                 try:
                     cur.execute(
@@ -4293,7 +4749,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '口眼㖞斜':
                 try:
                     cur.execute(
@@ -4302,7 +4759,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         # 望面色
         if orgin[12] == '面色_赤色':
             if orgin[14] == '无':
@@ -4313,7 +4771,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '满面通红':
                 try:
                     cur.execute(
@@ -4322,7 +4781,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '面红如妆':
                 try:
                     cur.execute(
@@ -4331,7 +4791,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '午后两颧潮红':
                 try:
                     cur.execute(
@@ -4340,7 +4801,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '目赤':
                 try:
                     cur.execute(
@@ -4349,7 +4811,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '面色_白色:':
             if orgin[14] == '无':
                 try:
@@ -4359,7 +4822,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '淡白':
                 try:
                     cur.execute(
@@ -4368,7 +4832,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '晄白':
                 try:
                     cur.execute(
@@ -4377,7 +4842,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '苍白':
                 try:
                     cur.execute(
@@ -4386,7 +4852,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '面色_黄色:':
             if orgin[14] == '无':
                 try:
@@ -4396,7 +4863,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '萎黄':
                 try:
                     cur.execute(
@@ -4405,7 +4873,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '黄胖':
                 try:
                     cur.execute(
@@ -4414,7 +4883,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '黄疸':
                 try:
                     cur.execute(
@@ -4423,7 +4893,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '面色_青色:':
             if orgin[14] == '无':
                 try:
@@ -4433,7 +4904,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '淡青或青黑':
                 try:
                     cur.execute(
@@ -4442,7 +4914,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '青黄':
                 try:
                     cur.execute(
@@ -4451,7 +4924,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '面色口唇青紫':
                 try:
                     cur.execute(
@@ -4460,7 +4934,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '眉间鼻柱唇周发青':
                 try:
                     cur.execute(
@@ -4469,7 +4944,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '面色_黑色:':
             if orgin[14] == '无':
                 try:
@@ -4479,7 +4955,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '面黑暗淡':
                 try:
                     cur.execute(
@@ -4488,7 +4965,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '面黑焦干':
                 try:
                     cur.execute(
@@ -4497,7 +4975,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '眼眶发黑':
                 try:
                     cur.execute(
@@ -4506,7 +4985,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         # 现服西药
         if orgin[12] == '抗血小板药物_抗血小板药物：':
             if orgin[14] == '阿司匹林':
@@ -4517,7 +4997,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '氯吡格雷':
                 try:
                     cur.execute(
@@ -4526,7 +5007,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '普拉格雷':
                 try:
                     cur.execute(
@@ -4535,7 +5017,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '替格瑞洛':
                 try:
                     cur.execute(
@@ -4544,7 +5027,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '他汀类药物_他汀类药物：':
             if orgin[14] == '无':
                 try:
@@ -4554,7 +5038,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '氟伐他汀':
                 try:
                     cur.execute(
@@ -4563,7 +5048,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '洛伐他汀':
                 try:
                     cur.execute(
@@ -4572,7 +5058,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '辛伐他汀':
                 try:
                     cur.execute(
@@ -4581,7 +5068,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '血脂康':
                 try:
                     cur.execute(
@@ -4590,7 +5078,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '阿托伐他汀':
                 try:
                     cur.execute(
@@ -4599,7 +5088,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '瑞舒伐他汀':
                 try:
                     cur.execute(
@@ -4608,7 +5098,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '匹伐他汀':
                 try:
                     cur.execute(
@@ -4617,7 +5108,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '普伐他汀':
                 try:
                     cur.execute(
@@ -4626,7 +5118,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '血管紧张转换酶抑制剂（ACEI）_血管紧张转换酶抑制剂（ACEI）：':
             if orgin[14] == '无':
                 try:
@@ -4636,7 +5129,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '卡托普利':
                 try:
                     cur.execute(
@@ -4645,7 +5139,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '贝那普利':
                 try:
                     cur.execute(
@@ -4654,7 +5149,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '福辛普利':
                 try:
                     cur.execute(
@@ -4663,7 +5159,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '依那普利':
                 try:
                     cur.execute(
@@ -4672,7 +5169,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '培哚普利':
                 try:
                     cur.execute(
@@ -4681,7 +5179,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '雷米普利':
                 try:
                     cur.execute(
@@ -4690,7 +5189,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '来诺普利':
                 try:
                     cur.execute(
@@ -4699,7 +5199,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '血管紧张素Ⅱ受体阻滞剂（ARB）_血管紧张素Ⅱ受体阻滞剂（ARB）：':
             if orgin[14] == '无':
                 try:
@@ -4709,7 +5210,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '奥美沙坦':
                 try:
                     cur.execute(
@@ -4718,7 +5220,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '厄贝沙坦':
                 try:
                     cur.execute(
@@ -4727,7 +5230,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '坎地沙坦':
                 try:
                     cur.execute(
@@ -4736,7 +5240,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '氯沙坦':
                 try:
                     cur.execute(
@@ -4745,7 +5250,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '替米沙坦':
                 try:
                     cur.execute(
@@ -4754,7 +5260,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '缬沙坦':
                 try:
                     cur.execute(
@@ -4763,7 +5270,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == 'β受体阻滞剂_β受体阻滞剂：':
             if orgin[14] == '无':
                 try:
@@ -4773,7 +5281,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '琥珀酸美托洛尔':
                 try:
                     cur.execute(
@@ -4782,7 +5291,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '酒石酸美托洛尔':
                 try:
                     cur.execute(
@@ -4791,7 +5301,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '比索洛尔':
                 try:
                     cur.execute(
@@ -4800,7 +5311,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '卡维地洛':
                 try:
                     cur.execute(
@@ -4809,7 +5321,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '阿替洛尔':
                 try:
                     cur.execute(
@@ -4818,7 +5331,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '钙离子通道阻滞剂（CCB）_钙离子通道阻滞剂（CCB）：':
             if orgin[14] == '无':
                 try:
@@ -4828,7 +5342,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '硝苯地平':
                 try:
                     cur.execute(
@@ -4837,7 +5352,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '氨氯地平':
                 try:
                     cur.execute(
@@ -4846,7 +5362,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '地尔硫卓':
                 try:
                     cur.execute(
@@ -4855,7 +5372,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '维拉帕米':
                 try:
                     cur.execute(
@@ -4864,7 +5382,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '非洛地平':
                 try:
                     cur.execute(
@@ -4873,7 +5392,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '贝尼地平':
                 try:
                     cur.execute(
@@ -4882,7 +5402,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '硝酸酯类药物_硝酸酯类药物：':
             if orgin[14] == '无':
                 try:
@@ -4892,7 +5413,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '硝酸异山梨酯':
                 try:
                     cur.execute(
@@ -4901,7 +5423,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '单硝酸异山梨酯':
                 try:
                     cur.execute(
@@ -4910,7 +5433,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '利尿剂_利尿剂:':
             if orgin[14] == '呋塞米':
                 try:
@@ -4920,7 +5444,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '布美他尼':
                 try:
                     cur.execute(
@@ -4929,7 +5454,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '托拉塞米':
                 try:
                     cur.execute(
@@ -4938,7 +5464,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '苄氟噻嗪':
                 try:
                     cur.execute(
@@ -4947,7 +5474,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '氯噻酮':
                 try:
                     cur.execute(
@@ -4956,7 +5484,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '吲达帕胺':
                 try:
                     cur.execute(
@@ -4965,7 +5494,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '美托拉宗':
                 try:
                     cur.execute(
@@ -4974,7 +5504,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '氨苯蝶啶':
                 try:
                     cur.execute(
@@ -4983,7 +5514,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '托伐普坦':
                 try:
                     cur.execute(
@@ -4992,7 +5524,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '氢氯噻嗪':
                 try:
                     cur.execute(
@@ -5001,7 +5534,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '醛固酮受体拮抗剂_醛固酮受体拮抗剂:':
             if orgin[14] == '无':
                 try:
@@ -5011,7 +5545,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '螺内酯':
                 try:
                     cur.execute(
@@ -5020,7 +5555,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '依普利酮':
                 try:
                     cur.execute(
@@ -5029,7 +5565,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '其他抗心肌缺血药物_其他抗心肌缺血药物:':
             if orgin[14] == '曲美他嗪':
                 try:
@@ -5039,7 +5576,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '尼可地尔':
                 try:
                     cur.execute(
@@ -5048,7 +5586,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '抗凝药物_抗凝药物:':
             if orgin[14] == '无':
                 try:
@@ -5058,7 +5597,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '华法林':
                 try:
                     cur.execute(
@@ -5067,7 +5607,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '达比加群':
                 try:
                     cur.execute(
@@ -5076,7 +5617,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '利伐沙班':
                 try:
                     cur.execute(
@@ -5085,7 +5627,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '其他药物_其他药物:':
             if orgin[14] == '地高辛':
                 try:
@@ -5095,7 +5638,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '伊伐布雷定':
                 try:
                     cur.execute(
@@ -5104,7 +5648,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             # 依折麦布 沙库巴曲缬沙坦钠 ？
         # 生命体征
         if orgin[12] == '身高：':
@@ -5115,7 +5660,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '体重:':
             try:
                 cur.execute(
@@ -5124,7 +5670,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # 腰围 ？
         # 血压 ？
         if orgin[12] == '收缩压：':
@@ -5135,7 +5682,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # 呼吸 ？
         if orgin[12] == '心率：':
             try:
@@ -5145,7 +5693,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # 甲功
         if orgin[12] == '游离三碘甲状腺原氨酸（FT3）：':
             try:
@@ -5155,7 +5704,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '游离甲状腺素（FT4）：':
             try:
                 cur.execute(
@@ -5164,7 +5714,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '促甲状腺素（TSH）：':
             try:
                 cur.execute(
@@ -5173,7 +5724,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # 肝功能
         if orgin[12] == '谷丙转氨酶（ALT）：':
             try:
@@ -5183,7 +5735,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '谷草转氨酶（AST）：':
             try:
                 cur.execute(
@@ -5192,7 +5745,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '总胆红素（TBil）：':
             try:
                 cur.execute(
@@ -5201,7 +5755,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # 直接胆红素（DBil） ？
         # γ-谷氨酰转肽酶（γ-GT） ？
         # 碱性磷酸酶（ALP） ？
@@ -5214,7 +5769,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '尿酸（UA）：':
             try:
                 cur.execute(
@@ -5223,7 +5779,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '尿素氮（BUN）:':
             try:
                 cur.execute(
@@ -5232,7 +5789,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # 舌诊脉象
         if orgin[12] == '舌质_舌色：':
             if orgin[14] == '淡红':
@@ -5243,7 +5801,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '淡白':
                 try:
                     cur.execute(
@@ -5252,7 +5811,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '红舌':
                 try:
                     cur.execute(
@@ -5261,7 +5821,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '绛舌':
                 try:
                     cur.execute(
@@ -5270,7 +5831,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '淡紫':
                 try:
                     cur.execute(
@@ -5279,7 +5841,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '紫红':
                 try:
                     cur.execute(
@@ -5288,7 +5851,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '边尖红':
                 try:
                     cur.execute(
@@ -5297,7 +5861,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '暗红':
                 try:
                     cur.execute(
@@ -5306,7 +5871,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '绛紫':
                 try:
                     cur.execute(
@@ -5315,7 +5881,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '青紫':
                 try:
                     cur.execute(
@@ -5324,7 +5891,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '紫暗':
                 try:
                     cur.execute(
@@ -5333,7 +5901,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '暗舌':
                 try:
                     cur.execute(
@@ -5342,7 +5911,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '黑舌':
                 try:
                     cur.execute(
@@ -5351,7 +5921,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '枯白':
                 try:
                     cur.execute(
@@ -5360,7 +5931,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '瘀斑瘀点':
                 try:
                     cur.execute(
@@ -5369,7 +5941,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '青舌':
                 try:
                     cur.execute(
@@ -5378,7 +5951,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '灰舌':
                 try:
                     cur.execute(
@@ -5387,7 +5961,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '舌质_舌形：':
             if orgin[14] == '正常':
                 try:
@@ -5397,7 +5972,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '胖大':
                 try:
                     cur.execute(
@@ -5406,7 +5982,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '边有齿痕':
                 try:
                     cur.execute(
@@ -5415,7 +5992,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '苍老':
                 try:
                     cur.execute(
@@ -5424,7 +6002,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '娇嫩':
                 try:
                     cur.execute(
@@ -5433,7 +6012,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '瘦薄':
                 try:
                     cur.execute(
@@ -5442,7 +6022,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '点刺':
                 try:
                     cur.execute(
@@ -5451,7 +6032,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '裂纹':
                 try:
                     cur.execute(
@@ -5460,7 +6042,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '舌疮':
                 try:
                     cur.execute(
@@ -5469,7 +6052,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '肿胀':
                 try:
                     cur.execute(
@@ -5478,7 +6062,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '枯舌':
                 try:
                     cur.execute(
@@ -5487,7 +6072,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '干舌':
                 try:
                     cur.execute(
@@ -5496,7 +6082,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '凸凹舌':
                 try:
                     cur.execute(
@@ -5505,7 +6092,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '舌下瘀血':
                 try:
                     cur.execute(
@@ -5514,7 +6102,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '舌下赘生物':
                 try:
                     cur.execute(
@@ -5523,7 +6112,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '舌下痰包':
                 try:
                     cur.execute(
@@ -5532,7 +6122,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '舌苔_苔色：':
             if orgin[14] == '白':
                 try:
@@ -5542,7 +6133,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '黄':
                 try:
                     cur.execute(
@@ -5551,7 +6143,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '白黄':
                 try:
                     cur.execute(
@@ -5560,7 +6153,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '淡黄':
                 try:
                     cur.execute(
@@ -5569,7 +6163,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '焦黄':
                 try:
                     cur.execute(
@@ -5578,7 +6173,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '深黄':
                 try:
                     cur.execute(
@@ -5587,7 +6183,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '灰':
                 try:
                     cur.execute(
@@ -5596,7 +6193,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '黑':
                 try:
                     cur.execute(
@@ -5605,7 +6203,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '灰黑':
                 try:
                     cur.execute(
@@ -5614,7 +6213,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '绿':
                 try:
                     cur.execute(
@@ -5623,7 +6223,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '舌苔_苔质：':
             if orgin[14] == '薄':
                 try:
@@ -5633,7 +6234,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '厚':
                 try:
                     cur.execute(
@@ -5642,7 +6244,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '滑':
                 try:
                     cur.execute(
@@ -5651,7 +6254,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '燥':
                 try:
                     cur.execute(
@@ -5660,7 +6264,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '糙':
                 try:
                     cur.execute(
@@ -5669,7 +6274,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '腻':
                 try:
                     cur.execute(
@@ -5678,7 +6284,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '腐':
                 try:
                     cur.execute(
@@ -5687,7 +6294,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '剥脱':
                 try:
                     cur.execute(
@@ -5696,7 +6304,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '润':
                 try:
                     cur.execute(
@@ -5705,7 +6314,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '少干':
                 try:
                     cur.execute(
@@ -5714,7 +6324,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '少苔':
                 try:
                     cur.execute(
@@ -5723,7 +6334,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '燥裂':
                 try:
                     cur.execute(
@@ -5732,7 +6344,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '燥腻':
                 try:
                     cur.execute(
@@ -5741,7 +6354,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '无苔':
                 try:
                     cur.execute(
@@ -5750,7 +6364,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         # 血常规
         # 淋巴细胞百分比 ？
         if orgin[12] == '中性粒细胞百分比':
@@ -5761,7 +6376,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '红细胞计数（RBC）':
             try:
                 cur.execute(
@@ -5770,7 +6386,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '白细胞计数（WBC）:':
             try:
                 cur.execute(
@@ -5779,7 +6396,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '血红蛋白（Hb）：':
             try:
                 cur.execute(
@@ -5788,7 +6406,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # 血小板计数（PLT）： ？
         # 血糖
         if orgin[12] == '空腹血糖（GLU）：':
@@ -5799,7 +6418,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '餐后2小时血糖':
             try:
                 cur.execute(
@@ -5808,7 +6428,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '糖化血红蛋白（HAb1c）:':
             try:
                 cur.execute(
@@ -5817,7 +6438,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # 血脂
         if orgin[12] == '总胆固醇（TC）：':
             try:
@@ -5827,7 +6449,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '甘油三酯（TG）:':
             try:
                 cur.execute(
@@ -5836,7 +6459,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '高密度脂蛋白胆固醇（HDL-C）:':
             try:
                 cur.execute(
@@ -5845,7 +6469,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '低密度脂蛋白胆固醇（LDL-C）:':
             try:
                 cur.execute(
@@ -5854,7 +6479,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         if orgin[12] == '脂蛋白a（Lp（a））':
             try:
                 cur.execute(
@@ -5863,7 +6489,8 @@ def transplant():
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
                 conn.rollback()
-                break
+                if error_stop:
+                    break
         # 西医诊断
         if orgin[12] == '主要诊断_主要诊断_冠心病_亚诊断':
             if orgin[14] == '稳定性心绞痛':
@@ -5874,7 +6501,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '缺血性心肌病':
                 try:
                     cur.execute(
@@ -5883,7 +6511,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '不稳定性心绞痛':
                 try:
                     cur.execute(
@@ -5892,7 +6521,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '初发劳力型心绞痛':
                 try:
                     cur.execute(
@@ -5901,7 +6531,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '恶化劳力型心绞痛':
                 try:
                     cur.execute(
@@ -5910,7 +6541,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '自发型心绞痛':
                 try:
                     cur.execute(
@@ -5919,7 +6551,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '变异型心绞痛':
                 try:
                     cur.execute(
@@ -5928,7 +6561,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '卧位型心绞痛':
                 try:
                     cur.execute(
@@ -5937,7 +6571,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '其他型心绞痛':
                 try:
                     cur.execute(
@@ -5946,7 +6581,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'CCS I级':
                 try:
                     cur.execute(
@@ -5955,7 +6591,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'CCS  II级':
                 try:
                     cur.execute(
@@ -5964,7 +6601,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'CCS  III级':
                 try:
                     cur.execute(
@@ -5973,7 +6611,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'CCS IV级':
                 try:
                     cur.execute(
@@ -5982,7 +6621,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'PCI术后':
                 try:
                     cur.execute(
@@ -5991,7 +6631,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'CABG术后':
                 try:
                     cur.execute(
@@ -6000,7 +6641,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '陈旧性心肌梗死（未知部位）':
                 try:
                     cur.execute(
@@ -6009,7 +6651,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '陈旧性心肌梗死（前壁）':
                 try:
                     cur.execute(
@@ -6018,7 +6661,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '陈旧性心肌梗死（前间壁）':
                 try:
                     cur.execute(
@@ -6027,7 +6671,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '陈旧性心肌梗死（下壁）':
                 try:
                     cur.execute(
@@ -6036,7 +6681,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '陈旧性心肌梗死（后壁）':
                 try:
                     cur.execute(
@@ -6045,7 +6691,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '陈旧性心肌梗死（侧壁）':
                 try:
                     cur.execute(
@@ -6054,7 +6701,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '陈旧性心肌梗死（高侧壁）':
                 try:
                     cur.execute(
@@ -6063,7 +6711,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '陈旧性心肌梗死（右室）':
                 try:
                     cur.execute(
@@ -6072,7 +6721,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'STEMI':
                 try:
                     cur.execute(
@@ -6081,7 +6731,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'NSTEMI':
                 try:
                     cur.execute(
@@ -6090,7 +6741,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '室壁瘤':
                 try:
                     cur.execute(
@@ -6099,7 +6751,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '附壁血栓':
                 try:
                     cur.execute(
@@ -6108,7 +6761,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '主要诊断_主要诊断_心功能不全_亚诊断':
             if orgin[14] == 'NYHA  I级':
                 try:
@@ -6118,7 +6772,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'NYHA  II级':
                 try:
                     cur.execute(
@@ -6127,7 +6782,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'NYHA  III级':
                 try:
                     cur.execute(
@@ -6136,7 +6792,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'NYHA  IV 级':
                 try:
                     cur.execute(
@@ -6145,7 +6802,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '左心衰':
                 try:
                     cur.execute(
@@ -6154,7 +6812,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '右心衰':
                 try:
                     cur.execute(
@@ -6163,7 +6822,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '全心衰':
                 try:
                     cur.execute(
@@ -6172,7 +6832,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'HFrEF':
                 try:
                     cur.execute(
@@ -6181,7 +6842,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'HFmrEF':
                 try:
                     cur.execute(
@@ -6190,7 +6852,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'HFpEF':
                 try:
                     cur.execute(
@@ -6199,7 +6862,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '主要诊断_主要诊断_心律失常_亚诊断':
             if orgin[14] == '室性期前收缩':
                 try:
@@ -6209,7 +6873,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '房性期前收缩':
                 try:
                     cur.execute(
@@ -6218,7 +6883,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心房颤动':
                 try:
                     cur.execute(
@@ -6227,7 +6893,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心房扑动':
                 try:
                     cur.execute(
@@ -6236,7 +6903,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'II度I型房室传导阻滞':
                 try:
                     cur.execute(
@@ -6245,7 +6913,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'II度II型房室传导阻滞':
                 try:
                     cur.execute(
@@ -6254,7 +6923,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'III度房室传导阻滞':
                 try:
                     cur.execute(
@@ -6263,7 +6933,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '安装心脏起搏器状态':
                 try:
                     cur.execute(
@@ -6272,7 +6943,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '预激综合征':
                 try:
                     cur.execute(
@@ -6281,7 +6953,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '窦性心动过缓':
                 try:
                     cur.execute(
@@ -6290,7 +6963,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '病窦综合征':
                 try:
                     cur.execute(
@@ -6299,7 +6973,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == 'I度房室传导阻滞':
                 try:
                     cur.execute(
@@ -6308,7 +6983,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '左束支传导阻滞':
                 try:
                     cur.execute(
@@ -6317,7 +6993,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '右束支传导阻滞':
                 try:
                     cur.execute(
@@ -6326,7 +7003,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '快慢综合征':
                 try:
                     cur.execute(
@@ -6335,7 +7013,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '主要诊断_主要诊断_高血压_亚诊断':
             if orgin[14] == '高血压  1级':
                 try:
@@ -6345,7 +7024,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '高血压 2级':
                 try:
                     cur.execute(
@@ -6354,7 +7034,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '高血压3级':
                 try:
                     cur.execute(
@@ -6363,7 +7044,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '原发性高血压':
                 try:
                     cur.execute(
@@ -6372,7 +7054,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '继发性高血压':
                 try:
                     cur.execute(
@@ -6381,7 +7064,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '主要诊断_主要诊断_高脂血症_亚诊断':
             if orgin[14] == '高甘油三酯血症':
                 try:
@@ -6391,7 +7075,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '高胆固醇血症':
                 try:
                     cur.execute(
@@ -6400,7 +7085,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '低高密度脂蛋白血症':
                 try:
                     cur.execute(
@@ -6409,7 +7095,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '混合型高脂血症':
                 try:
                     cur.execute(
@@ -6418,7 +7105,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '主要诊断_主要诊断':
             if orgin[14] == '2型糖尿病':
                 try:
@@ -6428,7 +7116,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '主要诊断_主要诊断_糖尿病前期_亚诊断':
             if orgin[14] == '空腹血糖异常':
                 try:
@@ -6438,7 +7127,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '糖耐量异常':
                 try:
                     cur.execute(
@@ -6447,7 +7137,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '主要诊断_主要诊断_糖尿病并发症_亚诊断':
             if orgin[14] == '糖尿病肾病':
                 try:
@@ -6457,7 +7148,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '糖尿病眼部并发症':
                 try:
                     cur.execute(
@@ -6466,7 +7158,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '糖尿病足':
                 try:
                     cur.execute(
@@ -6475,7 +7168,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '糖尿病大血管并发症':
                 try:
                     cur.execute(
@@ -6484,7 +7178,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '糖尿病周围血管病变':
                 try:
                     cur.execute(
@@ -6493,7 +7188,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         # if orgin[12] == '主要诊断_主要诊断_慢性肾功能不全_亚诊断':
         if orgin[12] == '主要诊断_主要诊断_周围血管病_亚诊断':
             if orgin[14] == '颈动脉粥样硬化':
@@ -6504,7 +7200,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '下肢动脉粥样硬化':
                 try:
                     cur.execute(
@@ -6513,7 +7210,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '主动脉粥样硬化':
                 try:
                     cur.execute(
@@ -6522,7 +7220,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '脑动脉粥样硬化':
                 try:
                     cur.execute(
@@ -6531,7 +7230,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '锁骨下动脉粥样硬化':
                 try:
                     cur.execute(
@@ -6540,7 +7240,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '肾动脉粥样硬化':
                 try:
                     cur.execute(
@@ -6549,7 +7250,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '深静脉血栓形成':
                 try:
                     cur.execute(
@@ -6558,7 +7260,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '下肢静脉曲张':
                 try:
                     cur.execute(
@@ -6567,7 +7270,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '主要诊断_主要诊断_扩张性心肌病_亚诊断':
             if orgin[14] == '二尖瓣关闭不全':
                 try:
@@ -6577,7 +7281,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '三尖瓣关闭不全':
                 try:
                     cur.execute(
@@ -6586,7 +7291,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
         if orgin[12] == '主要诊断_主要诊断_心脏瓣膜病_亚诊断':
             if orgin[14] == '主动脉瓣狭窄':
                 try:
@@ -6596,7 +7302,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '主动脉瓣关闭不全':
                 try:
                     cur.execute(
@@ -6605,7 +7312,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '二尖瓣狭窄':
                 try:
                     cur.execute(
@@ -6614,7 +7322,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '二尖瓣关闭不全':
                 try:
                     cur.execute(
@@ -6623,7 +7332,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '二尖瓣脱垂':
                 try:
                     cur.execute(
@@ -6632,7 +7342,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '三尖瓣关闭不全':
                 try:
                     cur.execute(
@@ -6641,7 +7352,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '肺动脉瓣狭窄':
                 try:
                     cur.execute(
@@ -6650,7 +7362,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '肺动脉瓣关闭不全':
                 try:
                     cur.execute(
@@ -6659,7 +7372,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
             if orgin[14] == '心脏瓣膜置换术后':
                 try:
                     cur.execute(
@@ -6668,7 +7382,8 @@ def transplant():
                 except Exception as ex:
                     logging.error('[更新异常]' + str(ex))
                     conn.rollback()
-                    break
+                    if error_stop:
+                        break
 
     cur.close()
     conn.close()
