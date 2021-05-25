@@ -5,6 +5,7 @@ import pymysql
 import time
 import logging
 import configparser
+import datetime
 
 # 第一步，创建一个logger
 logger = logging.getLogger()
@@ -44,6 +45,8 @@ def transplant():
 
     error_stop = False
 
+    mode = 2
+
     conn = get_conn()
     cur = conn.cursor()
 
@@ -81,16 +84,31 @@ def transplant():
                 break
 
         # 获取表/新建表：common表
-        cur.execute('SELECT ID FROM record_common2 where PATIENT_ID = %s;', table_patient_id)
+        if orgin[16] is not None:
+            create_time = datetime.datetime.strptime(str(orgin[16]), "%Y-%m-%d %H:%M:%S")
+        else:
+            create_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        if orgin[17] is not None:
+            record_date = datetime.datetime.strptime(str(orgin[17]), "%Y-%m-%d")
+        else:
+            record_date = time.strftime("%Y-%m-%d", time.localtime())
+        logging.info('[电子病历创建日期]' + str(create_time))
+        logging.info('[病史采集日期]' + str(record_date))
+        if mode == 1:
+            cur.execute('SELECT ID FROM record_common2 where PATIENT_ID = %s;', table_patient_id)
+        elif mode == 2:
+            cur.execute('SELECT ID FROM record_common2 where PATIENT_ID = %s and CREATE_TIME = %s;', (table_patient_id, create_time))
+        elif mode == 3:
+            cur.execute('SELECT ID FROM record_common2 where PATIENT_ID = %s and bscjrq = %s;', (table_patient_id, record_date))
+        else:
+            break
         table_common_id = cur.fetchone()
         if table_common_id is None:
             try:
                 cur.execute(
-                    'INSERT INTO record_common2(ID, BLLX, SUBJECT_ID, yljg_bh, yljg_mc, USER_ID, ORG_ID, CREATE_TIME,'
-                    ' UPDATE_TIME, STATUS, PATIENT_ID) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);'
-                    , (None, 0, 102, 176, '网络中心-冠心病测试', 'admin', 176,
-                       time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-                       time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), 0, table_patient_id))
+                    'INSERT INTO record_common2(ID, BLLX, SUBJECT_ID, yljg_bh, yljg_mc, bscjrq, USER_ID, ORG_ID, CREATE_TIME,'
+                    ' UPDATE_TIME, STATUS, PATIENT_ID) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);'
+                    , (None, 0, 102, 191, '西苑医院心医云', record_date, 'gxb_lrm', 191, create_time, create_time, 0, table_patient_id))
                 logging.debug("[最新ID]" + str(cur.lastrowid))
                 logging.debug("[插入数据的ID]" + str(conn.insert_id()))
                 table_common_id = conn.insert_id()
