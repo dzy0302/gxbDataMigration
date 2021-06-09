@@ -45,7 +45,7 @@ def transplant():
 
     error_stop = False
 
-    mode = 2
+    mode = 1
 
     conn = get_conn()
     cur = conn.cursor()
