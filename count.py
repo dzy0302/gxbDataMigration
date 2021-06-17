@@ -41,7 +41,7 @@ def get_conn():
     return conn
 
 
-def delete():
+def count():
 
     conn = get_conn()
     cur = conn.cursor()
@@ -60,4 +60,4 @@ def delete():
 
 
 if __name__ == '__main__':
-    delete()
+    count()
