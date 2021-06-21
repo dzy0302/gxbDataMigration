@@ -120,7 +120,10 @@ def update():
                    'mxsgnbq_ckd5q', 'zwxgb_jdmzyyh', 'zwxgb_xzdmzyyh', 'zwxgb_zdmzyyh', 'zwxgb_ndmzyyh',
                    'zwxgb_sgxdmzyyh', 'zwxgb_sdmzyyh', 'zwxgb_sjmxsxc', ' zwxgb_xzjmqz', 'nxgb_ngshyz', 'nxgb_dzxnqxfz',
                    'nxgb_ncxhyz', 'xzbmb_ejbgbbq', 'xzbmb_sjbgbbq', 'xzbmb_zdmbxz', 'xzbmb_zdmbgbbq', 'xzbmb_ejbxz',
-                   'xzbmb_ejbtc', 'xzbmb_fdmbxz', 'xzbmb_fdmbgbbq', 'xzbmb_xzbmzhsh']
+                   'xzbmb_ejbtc', 'xzbmb_fdmbxz', 'xzbmb_fdmbgbbq', 'xzbmb_xzbmzhsh', 'wh', 'wr', 'weh', 'ky', 'wnsnzz',
+                   'wnkwzz', 'ysps', 'wgzz', 'tbzz', 'xxbxzz', 'hxzz', 'ktzz',  'fbzz', 'ztzz', 'qzzz', 'mmzz', 'fzzz',
+                   'qtbs', 'xl', 'xdtqqss', 'gxb', 'xgnbq', 'xlsc', 'gxyb', 'gxzz', 'tnbbfz', 'mxsgnbq', 'zwxgb',
+                   'xzbmb', 'qx', 'qx_jzyn', 'qx_sb', 'qx_sj', 'qx_sk', 'qx_sy', 'qx_sys', 'qx_zb', 'qx_yy']
 
     conn = get_conn()
     cur = conn.cursor()
