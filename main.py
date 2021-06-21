@@ -2207,6 +2207,26 @@ def transplant():
                     if error_stop:
                         break
         if orgin[12] == '主症_主症：':
+            if orgin[14] == '气短':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zyzz_qd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '胸痛':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zyzz_xt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
             if orgin[14] == '头晕':
                 try:
                     cur.execute(
