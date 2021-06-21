@@ -7424,6 +7424,68 @@ def transplant():
                     conn.rollback()
                     if error_stop:
                         break
+        # 冠脉CTA
+        if orgin[12] == '冠脉钙化计分:':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmghjf = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LM:_头部:':
+            if orgin[14] == 'LM:_头部:无':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_lmtb = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == 'LM:_头部:轻度狭窄（<50%）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_lmtb = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == 'LM:_头部:中度狭窄（50%-75%）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_lmtb = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == 'LM:_头部:重度狭窄（76%-99%）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_lmtb = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == 'LM:_头部:重度狭窄（100%）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_lmtb = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
 
     cur.close()
     conn.close()
