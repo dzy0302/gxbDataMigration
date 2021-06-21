@@ -7945,6 +7945,57 @@ def transplant():
                     conn.rollback()
                     if error_stop:
                         break
+        if orgin[12] == 'RCA:_远段:':
+            if orgin[14] == 'RCA:_远段:无':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_rcayd = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == 'RCA:_远段:轻度狭窄（<50%）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_rcayd = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == 'RCA:_远段:中度狭窄（50%-75%）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_rcayd = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == 'RCA:_远段:重度狭窄（76%-99%）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_rcayd = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == 'RCA:_远段:重度狭窄（100%）':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_rcayd = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
 
     cur.close()
     conn.close()
