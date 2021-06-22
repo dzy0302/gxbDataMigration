@@ -8169,6 +8169,57 @@ def transplant():
                 conn.rollback()
                 if error_stop:
                     break
+        if orgin[12] == 'LM：头部狭窄：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_lmtbxzd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LM：尾部狭窄：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_lmwbxzd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LM：支架数量：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_lmzjs = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LM：_支架内再狭窄:':
+            if orgin[14] == 'LM：支架内再狭窄':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmzy_lmzjnzxz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == 'LM：再狭窄程度：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_lmzjnzxzcd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
 
     cur.close()
     conn.close()
