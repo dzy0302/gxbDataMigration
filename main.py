@@ -8220,6 +8220,67 @@ def transplant():
                 conn.rollback()
                 if error_stop:
                     break
+        if orgin[12] == 'LAD：近段狭窄：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_ladjdxzd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LAD：中段狭窄：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_ladzdxzd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LAD：远段狭窄：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_ladydxzd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LAD：支架数量：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_ladzjs = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LAD：_支架内再狭窄:':
+            if orgin[14] == '支架内再狭窄':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmzy_ladzjnzxz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == 'LAD：再狭窄程度：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_ladzjnzxzcd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
 
     cur.close()
     conn.close()
