@@ -8098,6 +8098,67 @@ def transplant():
                     conn.rollback()
                     if error_stop:
                         break
+        if orgin[12] == '其他分支狭窄_最重狭窄位于：':
+            if orgin[14] == '最重狭窄位于：第二对角支':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_qtfzzzxzwz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '最重狭窄位于：间隔支':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_qtfzzzxzwz = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '最重狭窄位于：钝缘支':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_qtfzzzxzwz = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '最重狭窄位于：锐缘支':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_qtfzzzxzwz = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '最重狭窄位于：后降支':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_qtfzzzxzwz = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '最重狭窄位于：位置不详':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmcta_qtfzzzxzwz = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
 
     cur.close()
     conn.close()
