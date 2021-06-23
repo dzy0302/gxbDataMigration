@@ -8281,6 +8281,67 @@ def transplant():
                 conn.rollback()
                 if error_stop:
                     break
+        if orgin[12] == 'RCA：近段狭窄：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_rcajdxzd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'RCA：中段狭窄：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_rcazdxzd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'RCA：远段狭窄：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_rcaydxzd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'RCA：支架数量：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_rcazjs = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'RCA：_支架内再狭窄:':
+            if orgin[14] == '支架内再狭窄':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmzy_rcazjnzxz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == 'RCA：再狭窄程度：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_rcazjnzxzcd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
 
     cur.close()
     conn.close()
