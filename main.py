@@ -8719,6 +8719,108 @@ def transplant():
                     conn.rollback()
                     if error_stop:
                         break
+        if orgin[12] == '左侧：_位置：':
+            if orgin[14] == '颈总动脉':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jdmcszc_jzdm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '颈内动脉':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jdmcszc_jndm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '椎动脉':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jdmcszc_zdm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '左侧最大内中膜厚度：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET jdmcszc_nzmhd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == '左侧最大斑块：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET jdmcszc_zdbk = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == '右侧：_位置：':
+            if orgin[14] == '颈总动脉':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jdmcsyc_jzdm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '颈内动脉':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jdmcsyc_jndm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '椎动脉':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jdmcsyc_zdm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '右侧最大内中膜厚度：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET jdmcsyc_nzmhd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == '右侧最大斑块：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET jdmcsyc_zdbk = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
 
     cur.close()
     conn.close()
