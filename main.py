@@ -8169,6 +8169,7 @@ def transplant():
                 conn.rollback()
                 if error_stop:
                     break
+        # 冠脉造影
         if orgin[12] == 'LM：头部狭窄：':
             try:
                 cur.execute(
@@ -8515,6 +8516,78 @@ def transplant():
                     conn.rollback()
                     if error_stop:
                         break
+        # 心脏超声
+        if orgin[12] == '左房内径：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET xzcs_zfnj = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == '左室内径：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET xzcs_zsnj = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == '肺动脉平均压：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET xzcs_fdmpjy = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LVEF：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET xzcs_lvefb = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == '主要测值：_E/A峰比值<1：':
+            if orgin[14] == '是':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xzcs_eafbz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '否':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xzcs_eafbz = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == 'E/A比值：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET xzcs_lvefb = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
 
     cur.close()
     conn.close()
