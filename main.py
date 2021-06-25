@@ -14,11 +14,11 @@ logger.setLevel(logging.DEBUG)  # Log等级总开关
 # 第二步，创建一个handler，用于写入日志文件
 logfile = 'logs/logs.txt'
 fh = logging.FileHandler(logfile, mode='a', encoding='utf-8')
-fh.setLevel(logging.DEBUG)  # 用于写到file的等级开关
+fh.setLevel(logging.ERROR)  # 用于写到file的等级开关
 
 # 第三步，再创建一个handler,用于输出到控制台
 ch = logging.StreamHandler()
-ch.setLevel(logging.DEBUG)  # 输出到console的log等级的开关
+ch.setLevel(logging.ERROR)  # 输出到console的log等级的开关
 
 # 第四步，定义handler的输出格式
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(filename)s[:%(lineno)d] - %(message)s')
@@ -11257,38 +11257,38 @@ def clean_gxb():
                 conn.rollback()
                 break
 
-        # qx情绪是否异常
-        cur.execute(
-            'SELECT ID, qx_jzyn, qx_sb, qx_sj, qx_sk, qx_sy, qx_sys, qx_zb, '
-            'qx_yy FROM record_gxb2;')
-        qx_data = cur.fetchall()
-        for qx in qx_data:
-            if 1 in qx:
-                try:
-                    cur.execute(
-                        'UPDATE record_gxb2 SET qx = %s WHERE ID = %s;', (1, qx[0]))
-                    conn.commit()
-                except Exception as ex:
-                    logging.error('[更新异常]' + str(ex))
-                    conn.rollback()
-                    break
+    # qx情绪是否异常
+    cur.execute(
+        'SELECT ID, qx_jzyn, qx_sb, qx_sj, qx_sk, qx_sy, qx_sys, qx_zb, '
+        'qx_yy FROM record_gxb2;')
+    qx_data = cur.fetchall()
+    for qx in qx_data:
+        if 1 in qx:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET qx = %s WHERE ID = %s;', (1, qx[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
 
-        # xzcszd心脏超声诊断是否异常
-        cur.execute(
-            'SELECT ID, xzcszd_sbl, xzcszd_fbxs, xzcszd_ejbxz, xzcszd_ejbgbbq, xzcszd_ejbtc, xzcszd_sjbgbbq, '
-            'xzcszd_zdmbxz, xzcszd_zdmbgbbq, xzcszd_fdmbxz, xzcszd_szdmzk, xzcszd_zsszgnjt, xzcszd_cjxxjgx, '
-            'xzcszd_sbydyc FROM record_gxb2;')
-        xzcszd_data = cur.fetchall()
-        for xzcszd in xzcszd_data:
-            if 1 in xzcszd:
-                try:
-                    cur.execute(
-                        'UPDATE record_gxb2 SET xzcszd = %s WHERE ID = %s;', (1, xzcszd[0]))
-                    conn.commit()
-                except Exception as ex:
-                    logging.error('[更新异常]' + str(ex))
-                    conn.rollback()
-                    break
+    # xzcszd心脏超声诊断是否异常
+    cur.execute(
+        'SELECT ID, xzcszd_sbl, xzcszd_fbxs, xzcszd_ejbxz, xzcszd_ejbgbbq, xzcszd_ejbtc, xzcszd_sjbgbbq, '
+        'xzcszd_zdmbxz, xzcszd_zdmbgbbq, xzcszd_fdmbxz, xzcszd_szdmzk, xzcszd_zsszgnjt, xzcszd_cjxxjgx, '
+        'xzcszd_sbydyc FROM record_gxb2;')
+    xzcszd_data = cur.fetchall()
+    for xzcszd in xzcszd_data:
+        if 1 in xzcszd:
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET xzcszd = %s WHERE ID = %s;', (1, xzcszd[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
 
     cur.close()
     conn.close()
