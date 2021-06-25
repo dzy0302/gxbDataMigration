@@ -10199,6 +10199,376 @@ def transplant():
                     conn.rollback()
                     if error_stop:
                         break
+        # PHQ-9抑郁症筛查量表
+        if orgin[12] == 'PHQ-9抑郁症筛查量表_1、做事时提不起劲或没有兴趣':
+            if orgin[14] == '没有':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zsstbqj = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '有几天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zsstbqj = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '一周以上时间':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zsstbqj = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '几乎每天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zsstbqj = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == 'PHQ-9抑郁症筛查量表_2、感到心情低落、沮丧或绝望':
+            if orgin[14] == '没有':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gdxqdl = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '有几天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gdxqdl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '一周以上时间':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gdxqdl = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '几乎每天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gdxqdl = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == 'PHQ-9抑郁症筛查量表_3、入睡困难、睡不安稳或睡眠过多':
+            if orgin[14] == '没有':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET rskn = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '有几天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET rskn = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '一周以上时间':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET rskn = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '几乎每天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET rskn = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == 'PHQ-9抑郁症筛查量表_4、感觉疲倦或没有活力':
+            if orgin[14] == '没有':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gjpjhmyhl = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '有几天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gjpjhmyhl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '一周以上时间':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gjpjhmyhl = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '几乎每天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gjpjhmyhl = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == 'PHQ-9抑郁症筛查量表_5、食欲不振或吃太多':
+            if orgin[14] == '没有':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sybzhctd = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '有几天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sybzhctd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '一周以上时间':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sybzhctd = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '几乎每天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sybzhctd = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == 'PHQ-9抑郁症筛查量表_6、觉得自己很糟，或觉得自己很失败，或让自己或家人失望':
+            if orgin[14] == '没有':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jdzjhz = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '有几天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jdzjhz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '一周以上时间':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jdzjhz = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '几乎每天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jdzjhz = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == 'PHQ-9抑郁症筛查量表_7、对事物专注有困难，例如阅读报纸或看电视不能集中注意力':
+            if orgin[14] == '没有':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wfjzjl = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '有几天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wfjzjl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '一周以上时间':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wfjzjl = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '几乎每天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wfjzjl = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == 'PHQ-9抑郁症筛查量表_8、动作或说话速度缓慢到别人已经察觉？或正好相反，烦躁或坐立不安、动来动去的情况更胜于平常':
+            if orgin[14] == '没有':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xdhshhm = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '有几天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xdhshhm = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '一周以上时间':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xdhshhm = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '几乎每天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET xdhshhm = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == 'PHQ-9抑郁症筛查量表_9、有不如死掉或用某种方式伤害自己的念头':
+            if orgin[14] == '没有':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ymzfsshzj = %s WHERE ID = %s;', (0, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '有几天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ymzfsshzj = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '一周以上时间':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ymzfsshzj = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '几乎每天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET ymzfsshzj = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
 
 
     cur.close()
