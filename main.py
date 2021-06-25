@@ -8821,6 +8821,1097 @@ def transplant():
                 conn.rollback()
                 if error_stop:
                     break
+        # 西雅图心绞痛量表评分(基线)
+        if orgin[12] == '1.过去四周内，由于胸痛、胸部紧榨感和心绞痛所致各项受限程度_自己穿衣':
+            if orgin[14] == '重度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_zjcy = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '中度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_zjcy = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '轻度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_zjcy = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '稍受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_zjcy = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '不受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_zjcy = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '因其他原因受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_zjcy = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '1.过去四周内，由于胸痛、胸部紧榨感和心绞痛所致各项受限程度_室内走路':
+            if orgin[14] == '重度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_snzl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '中度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_snzl = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '轻度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_snzl = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '稍受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_snzl = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '不受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_snzl = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '因其他原因受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_snzl = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '1.过去四周内，由于胸痛、胸部紧榨感和心绞痛所致各项受限程度_淋浴':
+            if orgin[14] == '重度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_ly = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '中度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_ly = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '轻度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_ly = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '稍受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_ly = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '不受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_ly = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '因其他原因受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_ly = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '1.过去四周内，由于胸痛、胸部紧榨感和心绞痛所致各项受限程度_爬坡或楼梯（三层，不停）':
+            if orgin[14] == '重度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_pphlt = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '中度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_pphlt = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '轻度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_pphlt = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '稍受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_pphlt = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '不受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_pphlt = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '因其他原因受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_pphlt = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '1.过去四周内，由于胸痛、胸部紧榨感和心绞痛所致各项受限程度_室外活动或提杂物':
+            if orgin[14] == '重度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_swhd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '中度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_swhd = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '轻度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_swhd = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '稍受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_swhd = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '不受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_swhd = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '因其他原因受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_swhd = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '1.过去四周内，由于胸痛、胸部紧榨感和心绞痛所致各项受限程度_轻快步行一段路（一公里）':
+            if orgin[14] == '重度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_qbkx = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '中度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_qbkx = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '轻度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_qbkx = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '稍受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_qbkx = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '不受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_qbkx = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '因其他原因受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_qbkx = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '1.过去四周内，由于胸痛、胸部紧榨感和心绞痛所致各项受限程度_慢跑一公里':
+            if orgin[14] == '重度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_mpygl = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '中度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_mpygl = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '轻度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_mpygl = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '稍受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_mpygl = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '不受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_mpygl = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '因其他原因受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_mpygl = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '1.过去四周内，由于胸痛、胸部紧榨感和心绞痛所致各项受限程度_提起或移动重物':
+            if orgin[14] == '重度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_ydzw = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '中度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_ydzw = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '轻度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_ydzw = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '稍受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_ydzw = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '不受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_ydzw = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '因其他原因受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_ydzw = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '1.过去四周内，由于胸痛、胸部紧榨感和心绞痛所致各项受限程度_剧烈运动（如游泳或打球）':
+            if orgin[14] == '重度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_jlyd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '中度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_jlyd = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '轻度受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_jlyd = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '稍受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_jlyd = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '不受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_jlyd = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '因其他原因受限':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET sxcd_jlyd = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '2.与4周前比较，作最大强度的活动时，胸痛、胸部紧榨感和心绞痛的发作情况_与4周前比较，作最大强度的活动时，胸痛、胸部紧榨感和心绞痛的发作情况':
+            if orgin[14] == '明显增加':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zdqdhdfzqk = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '轻微增加':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zdqdhdfzqk = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '相同':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zdqdhdfzqk = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '轻微减少':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zdqdhdfzqk = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '明显减少':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zdqdhdfzqk = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '3.过去4周内，胸痛、胸部紧榨感和心绞痛的平均发作次数_过去4周内，胸痛、胸部紧榨感和心绞痛的平均发作次数':
+            if orgin[14] == '>=4次/天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET pjfzcs = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '1-3次/天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET pjfzcs = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '≥3次/周':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET pjfzcs = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '1-2次/周':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET pjfzcs = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '<1次/周':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET pjfzcs = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '无发作':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET pjfzcs = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '4.过去4周内，胸痛、胸部紧榨感和心绞痛服用硝基药物（如硝酸甘油）平均次数_过去4周内，胸痛、胸部紧榨感和心绞痛服用硝基药物（如硝酸甘油）平均次数':
+            if orgin[14] == '>=4次/天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET fyxjywpjcs = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '1-3次/天':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET fyxjywpjcs = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '≥3次/周':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET fyxjywpjcs = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '1-2次/周':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET fyxjywpjcs = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '<1次/周':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET fyxjywpjcs = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '无发作':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET fyxjywpjcs = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '5.因胸痛、胸部紧榨感和心绞痛遵守医嘱服药带来的烦恼_因胸痛、胸部紧榨感和心绞痛遵守医嘱服药带来的烦恼':
+            if orgin[14] == '严重':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zsyzfydldfn = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '中度':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zsyzfydldfn = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '轻微':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zsyzfydldfn = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '极少':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zsyzfydldfn = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '无':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zsyzfydldfn = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '医生未给药':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zsyzfydldfn = %s WHERE ID = %s;', (6, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '6.对治疗胸痛、胸部紧榨感和心绞痛的各种措施的满意程度_对治疗胸痛、胸部紧榨感和心绞痛的各种措施的满意程度':
+            if orgin[14] == '不满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gzcsmycd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '大部分不满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gzcsmycd = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '部分满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gzcsmycd = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '大部分满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gzcsmycd = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '高度满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gzcsmycd = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '7.对医生胸痛、胸部紧榨感和心绞痛的解释满意程度_对医生胸痛、胸部紧榨感和心绞痛的解释满意程度':
+            if orgin[14] == '不满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jsmycd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '大部分不满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jsmycd = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '部分满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jsmycd = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '大部分满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jsmycd = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '高度满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET jsmycd = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '8.总的来说，对目前胸痛、胸部紧榨感和心绞痛的治疗满意程度_总的来说，对目前胸痛、胸部紧榨感和心绞痛的治疗满意程度':
+            if orgin[14] == '不满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zlmycd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '大部分不满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zlmycd = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '部分满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zlmycd = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '大部分满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zlmycd = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '高度满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET zlmycd = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '9.过去4周内，胸痛、胸部紧榨感和心绞痛的影响生活乐趣的程度_过去4周内，胸痛、胸部紧榨感和心绞痛的影响生活乐趣的程度':
+            if orgin[14] == '不满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET yxshlqdcd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '大部分不满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET yxshlqdcd = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '部分满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET yxshlqdcd = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '大部分满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET yxshlqdcd = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '高度满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET yxshlqdcd = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '10.在您的未来生活中如果还有胸痛、胸部紧榨感和心绞痛的。你会感觉怎样_在您的未来生活中如果还有胸痛、胸部紧榨感和心绞痛的。你会感觉怎样':
+            if orgin[14] == '不满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wlshczsmgj = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '大部分不满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wlshczsmgj = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '部分满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wlshczsmgj = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '大部分满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wlshczsmgj = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '高度满意':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET wlshczsmgj = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == '11.对心脏病发作和突然死亡的担心程度_对心脏病发作和突然死亡的担心程度':
+            if orgin[14] == '一直担心':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET trswddxcd = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '经常担心':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET trswddxcd = %s WHERE ID = %s;', (2, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '有时担心':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET trswddxcd = %s WHERE ID = %s;', (3, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '很少担心':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET trswddxcd = %s WHERE ID = %s;', (4, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+            if orgin[14] == '绝不担心':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET trswddxcd = %s WHERE ID = %s;', (5, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+
 
     cur.close()
     conn.close()
