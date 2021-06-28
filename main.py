@@ -5831,6 +5831,36 @@ def transplant():
                 conn.rollback()
                 if error_stop:
                     break
+        if orgin[12] == '纤维蛋白原（FIB）':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET fib = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == '凝血酶原标准化比率(INR)：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET inr = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'D-二聚体':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET dejt = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
         # 舌诊脉象
         if orgin[12] == '舌质_舌色：':
             if orgin[14] == '淡红':
@@ -7742,7 +7772,7 @@ def transplant():
                     if error_stop:
                         break
         if orgin[12] == 'LCX_中段:':
-            if orgin[14] == 'LCX_中段:无':
+            if orgin[14] == 'LCX_中段：无':
                 try:
                     cur.execute(
                         'UPDATE record_gxb2 SET gmcta_lcxzd = %s WHERE ID = %s;', (0, table_gxb_id))
@@ -7752,7 +7782,7 @@ def transplant():
                     conn.rollback()
                     if error_stop:
                         break
-            if orgin[14] == 'LCX_中段:轻度狭窄（<50%）':
+            if orgin[14] == 'LCX_中段：轻度狭窄（<50%）':
                 try:
                     cur.execute(
                         'UPDATE record_gxb2 SET gmcta_lcxzd = %s WHERE ID = %s;', (2, table_gxb_id))
@@ -7762,7 +7792,7 @@ def transplant():
                     conn.rollback()
                     if error_stop:
                         break
-            if orgin[14] == 'LCX_中段:中度狭窄（50%-75%）':
+            if orgin[14] == 'LCX_中段：中度狭窄（50%-75%）':
                 try:
                     cur.execute(
                         'UPDATE record_gxb2 SET gmcta_lcxzd = %s WHERE ID = %s;', (3, table_gxb_id))
@@ -7772,7 +7802,7 @@ def transplant():
                     conn.rollback()
                     if error_stop:
                         break
-            if orgin[14] == 'LCX_中段:重度狭窄（76%-99%）':
+            if orgin[14] == 'LCX_中段：重度狭窄（76%-99%）':
                 try:
                     cur.execute(
                         'UPDATE record_gxb2 SET gmcta_lcxzd = %s WHERE ID = %s;', (4, table_gxb_id))
@@ -7782,7 +7812,7 @@ def transplant():
                     conn.rollback()
                     if error_stop:
                         break
-            if orgin[14] == 'LCX_中段:重度狭窄（100%）':
+            if orgin[14] == 'LCX_中段：重度狭窄（100%）':
                 try:
                     cur.execute(
                         'UPDATE record_gxb2 SET gmcta_lcxzd = %s WHERE ID = %s;', (5, table_gxb_id))
@@ -8276,6 +8306,67 @@ def transplant():
             try:
                 cur.execute(
                     'UPDATE record_gxb2 SET gmzy_ladzjnzxzcd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LCX：近段狭窄：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_lcxjdxzd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LCX：中段狭窄':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_lcxzdxzd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LCX：远段狭窄：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_lcxydxzd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LCX：支架数量：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_lcxzjs = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
+        if orgin[12] == 'LCX：_支架内再狭窄:':
+            if orgin[14] == 'LCX：支架内再狭窄':
+                try:
+                    cur.execute(
+                        'UPDATE record_gxb2 SET gmzy_lcxzjnzxz = %s WHERE ID = %s;', (1, table_gxb_id))
+                    conn.commit()
+                except Exception as ex:
+                    logging.error('[更新异常]' + str(ex))
+                    conn.rollback()
+                    if error_stop:
+                        break
+        if orgin[12] == 'LCX：再狭窄程度：':
+            try:
+                cur.execute(
+                    'UPDATE record_gxb2 SET gmzy_lcxzjnzxzcd = %s WHERE ID = %s;', (orgin[14], table_gxb_id))
                 conn.commit()
             except Exception as ex:
                 logging.error('[更新异常]' + str(ex))
@@ -11378,7 +11469,13 @@ def update_gxb():
                    'xzbmb', 'qx', 'qx_jzyn', 'qx_sb', 'qx_sj', 'qx_sk', 'qx_sy', 'qx_sys', 'qx_zb', 'qx_yy', 'xzcszd',
                    'xzcszd_sbl', 'xzcszd_fbxs', 'xzcszd_ejbxz', 'xzcszd_ejbgbbq', 'xzcszd_ejbtc', 'xzcszd_sjbgbbq',
                    'xzcszd_zdmbxz', 'xzcszd_zdmbgbbq', 'xzcszd_fdmbxz', 'xzcszd_szdmzk', 'xzcszd_zsszgnjt',
-                   'xzcszd_cjxxjgx', 'xzcszd_sbydyc']
+                   'xzcszd_cjxxjgx', 'xzcszd_sbydyc', 'qtyw_dgx', 'qtyw_yfbld', 'gmzy_lmtbxzd', 'gmzy_lmwbxzd',
+                   'gmzy_lmzjs', 'gmzy_lmzjnzxz', 'gmzy_lmzjnzxzcd', 'gmzy_ladjdxzd', 'gmzy_ladzdxzd', 'gmzy_ladydxzd',
+                   'gmzy_ladzjs', 'gmzy_ladzjnzxz', 'gmzy_ladzjnzxzcd', 'gmzy_lcxjdxzd', 'gmzy_lcxydxzd', 'gmzy_lcxzjs',
+                   'gmzy_lcxzjnzxz', 'gmzy_lcxzjnzxzcd', 'gmzy_rcajdxzd', 'gmzy_rcazdxzd', 'gmzy_rcaydxzd',
+                   'gmzy_rcazjs', 'gmzy_rcazjnzxz', 'gmzy_rcazjnzxzcd', 'gmzy_d1jdxzd', 'gmzy_d1ydxzd', 'gmzy_d1zjs',
+                   'gmzy_d1hzjzjnzxz', 'gmzy_d1hzjzjnzxzcd', 'gmzy_lcxzdxzd', 'zyzz', 'zyzz_xm', 'zyzz_xt', 'zyzz_ty',
+                   'zyzz_tt', 'zyzz_xj', 'zyzz_qd', 'zyzz_fz', 'zyzz_fl', 'zyzz_xy', 'zyzz_tz', 'zyzz_bt', 'zyzz_cc']
 
     conn = get_conn()
     cur = conn.cursor()
@@ -11394,6 +11491,27 @@ def update_gxb():
 
     cur.close()
     conn.close()
+
+# def update_gxb_condition():
+#     conn = get_conn()
+#     cur = conn.cursor()
+#
+#     # qtyw其他药物（只要该患者西药用药部分有一项不为空，则空值可按0处理）
+#     cur.execute('SELECT ID, qtyw_dgx, qtyw_yfbld FROM record_gxb2;')
+#     qtyw_data = cur.fetchall()
+#     for qtyw in qtyw_data:
+#         if 1 in qtyw:
+#             try:
+#                 cur.execute(
+#                     'UPDATE record_gxb2 SET qtyw = %s WHERE ID = %s;', (1, qtyw[0]))
+#                 conn.commit()
+#             except Exception as ex:
+#                 logging.error('[更新异常]' + str(ex))
+#                 conn.rollback()
+#                 break
+#
+#     cur.close()
+#     conn.close()
 
 
 if __name__ == '__main__':
