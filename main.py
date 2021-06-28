@@ -10661,187 +10661,6 @@ def transplant():
                     if error_stop:
                         break
 
-
-    cur.close()
-    conn.close()
-
-
-def clean_common():
-    conn = get_conn()
-    cur = conn.cursor()
-
-    # shent神态是否异常
-    cur.execute('SELECT ID, st_fz, st_hh, st_ss, st_hm, st_zw, st_dm FROM record_common2;')
-    shent_data = cur.fetchall()
-    for shent in shent_data:
-        if 1 in shent:
-            try:
-                cur.execute(
-                    'UPDATE record_common2 SET shent = %s WHERE ID = %s;', (1, shent[0]))
-                conn.commit()
-            except Exception as ex:
-                logging.error('[更新异常]' + str(ex))
-                conn.rollback()
-                break
-
-    # qx情绪是否异常
-    cur.execute('SELECT ID, qx_jz, qx_yn, qx_xf, qx_dsdl FROM record_common2;')
-    qx_data = cur.fetchall()
-    for qx in qx_data:
-        if 1 in qx:
-            try:
-                cur.execute(
-                    'UPDATE record_common2 SET qx = %s WHERE ID = %s;', (1, qx[0]))
-                conn.commit()
-            except Exception as ex:
-                logging.error('[更新异常]' + str(ex))
-                conn.rollback()
-                break
-
-    # sm睡眠是否异常
-    cur.execute('SELECT ID, sm_rskn, sm_yx, sm_dm, sm_ss, sm_hz FROM record_common2;')
-    sm_data = cur.fetchall()
-    for sm in sm_data:
-        if 1 in sm:
-            try:
-                cur.execute(
-                    'UPDATE record_common2 SET sm = %s WHERE ID = %s;', (1, sm[0]))
-                conn.commit()
-            except Exception as ex:
-                logging.error('[更新异常]' + str(ex))
-                conn.rollback()
-                break
-
-    # xb小便是否异常
-    cur.execute('SELECT ID, xb_cs, xb_ys, xb_dx, xb_tt FROM record_common2;')
-    xb_data = cur.fetchall()
-    for xb in xb_data:
-        if 1 in xb:
-            try:
-                cur.execute(
-                    'UPDATE record_common2 SET xb = %s WHERE ID = %s;', (1, xb[0]))
-                conn.commit()
-            except Exception as ex:
-                logging.error('[更新异常]' + str(ex))
-                conn.rollback()
-                break
-
-    # db大便是否异常
-    cur.execute(
-        'SELECT ID, db_ys, db_zdgy, db_zdxsy, db_zdzrbcx, db_zdnnbs, db_zdwgbh, db_zdtjbt, db_zdjyny, db_bggmzr, '
-        'db_bgljhz, db_bgpbbs, db_bgjpyb FROM record_common2;')
-    db_data = cur.fetchall()
-    for db in db_data:
-        if 1 in db:
-            try:
-                cur.execute(
-                    'UPDATE record_common2 SET db = %s WHERE ID = %s;', (1, db[0]))
-                conn.commit()
-            except Exception as ex:
-                logging.error('[更新异常]' + str(ex))
-                conn.rollback()
-                break
-
-    # sx舌形是否异常
-    cur.execute('SELECT ID, sx_ls, sx_ns, sx_pds, sx_sxs, sx_dcs, sx_lws, sx_chs FROM record_common2;')
-    sx_data = cur.fetchall()
-    for sx in sx_data:
-        if 1 in sx:
-            try:
-                cur.execute(
-                    'UPDATE record_common2 SET sx = %s WHERE ID = %s;', (1, sx[0]))
-                conn.commit()
-            except Exception as ex:
-                logging.error('[更新异常]' + str(ex))
-                conn.rollback()
-                break
-
-    # ms面色是否异常
-    cur.execute('SELECT ID, ms_cs, ms_bs, ms_hus, ms_qs, ms_hes FROM record_common2;')
-    ms_data = cur.fetchall()
-    for ms in ms_data:
-        if 1 in ms:
-            try:
-                cur.execute(
-                    'UPDATE record_common2 SET ms = %s WHERE ID = %s;', (1, ms[0]))
-                conn.commit()
-            except Exception as ex:
-                logging.error('[更新异常]' + str(ex))
-                conn.rollback()
-                break
-
-    # wgbj五官白睛是否异常
-    cur.execute('SELECT ID, wgbj_mc, wgbj_mh, wgbj_bjzz, wgbj_bjwz, wgbj_bjjj, wgbj_mzjq FROM record_common2;')
-    wgbj_data = cur.fetchall()
-    for wgbj in wgbj_data:
-        if 1 in wgbj:
-            try:
-                cur.execute(
-                    'UPDATE record_common2 SET wgbj = %s WHERE ID = %s;', (1, wgbj[0]))
-                conn.commit()
-            except Exception as ex:
-                logging.error('[更新异常]' + str(ex))
-                conn.rollback()
-                break
-
-    # wghj五官黑睛是否异常
-    cur.execute('SELECT ID, wghj_hjhz, wghj_hjcc, wghj_hjsy, wghj_hjsb, wghj_hjsh FROM record_common2;')
-    wghj_data = cur.fetchall()
-    for wghj in wghj_data:
-        if 1 in wghj:
-            try:
-                cur.execute(
-                    'UPDATE record_common2 SET wghj = %s WHERE ID = %s;', (1, wghj[0]))
-                conn.commit()
-            except Exception as ex:
-                logging.error('[更新异常]' + str(ex))
-                conn.rollback()
-                break
-
-    # wgmz五官目眦是否异常
-    cur.execute('SELECT ID, wgmz_mzdb, wgmz_mzhz, wgmz_mzkl FROM record_common2;')
-    wgmz_data = cur.fetchall()
-    for wgmz in wgmz_data:
-        if 1 in wgmz:
-            try:
-                cur.execute(
-                    'UPDATE record_common2 SET wgmz = %s WHERE ID = %s;', (1, wgmz[0]))
-                conn.commit()
-            except Exception as ex:
-                logging.error('[更新异常]' + str(ex))
-                conn.rollback()
-                break
-
-    # wgyj五官眼睑是否异常
-    cur.execute('SELECT ID, wgyj_yjcx, wgyj_yjfz, wgyj_yjsd, wgyj_yjxc, wgyj_bjhz, wgyj_bjkp, wgyj_bjqz, wgyj_jysl '
-                'FROM record_common2;')
-    wgyj_data = cur.fetchall()
-    for wgyj in wgyj_data:
-        if 1 in wgyj:
-            try:
-                cur.execute(
-                    'UPDATE record_common2 SET wgyj = %s WHERE ID = %s;', (1, wgyj[0]))
-                conn.commit()
-            except Exception as ex:
-                logging.error('[更新异常]' + str(ex))
-                conn.rollback()
-                break
-
-    # wgkc五官口唇是否异常
-    cur.execute('SELECT ID, wgkc_yyza, wgkc_kcsa, wgkc_kccl, wgkc_kchz, wgkc_kcdb, wgkc_kccd, wgkc_csqz, wgkc_cssa,  '
-                'wgkc_kzsc, wgkc_kqcl, wgkc_kjjl, wgkc_kjhz, wgkc_kywx FROM record_common2;')
-    wgkc_data = cur.fetchall()
-    for wgkc in wgkc_data:
-        if 1 in wgkc:
-            try:
-                cur.execute(
-                    'UPDATE record_common2 SET wgkc = %s WHERE ID = %s;', (1, wgkc[0]))
-                conn.commit()
-            except Exception as ex:
-                logging.error('[更新异常]' + str(ex))
-                conn.rollback()
-                break
-
     cur.close()
     conn.close()
 
@@ -11387,25 +11206,25 @@ def clean_gxb():
 
 def update_gxb():
     update_args = ['wh_wh', 'wh_eh', 'wh_ef', 'wh_hz', 'wh_fl', 'wh_szbw', 'wh_sizbw', 'wh_sdh', 'wh_tl', 'wh_bl',
-                   'wh_xzh',  'wh_ful', 'wh_wzhl', 'wh_yxsl', 'wh_wpl', 'wh_yl', 'wh_yyxfl', 'wh_xhzl', 'wh_gjhl',
+                   'wh_xzh', 'wh_ful', 'wh_wzhl', 'wh_yxsl', 'wh_wpl', 'wh_yl', 'wh_yyxfl', 'wh_xhzl', 'wh_gjhl',
                    'wh_xw', 'wr_wr', 'wr_er', 'wr_fr', 'wr_wxfr', 'wr_szxr', 'wr_cr', 'wr_gzcr', 'wr_whyjcr', 'wr_zr',
                    'wr_rfcr', 'wr_srys', 'wr_tr', 'wr_tmr', 'wr_xiozfr', 'wr_xinzfr', 'wr_xzyr', 'wr_br', 'wr_wzyr',
-                   'wr_sbr', 'wr_yrzl', 'weh_zih', 'weh_daoh', 'weh_dah', 'weh_duh', 'weh_hs',	'weh_hb', 'weh_hc',
-                   'weh_lh',	'weh_rh', 'weh_hh', 'weh_yh', 'weh_hzy', 'weh_jh', 'weh_zh', 'weh_sjhc', 'weh_xhhc',
-                   'weh_eh', 'weh_th',	 'weh_xh',	 'weh_sh', 'weh_szxh', 'weh_hrhc', 'ky_kg',	 'ky_fk', 'ky_kkyy',
-                   'ky_kxry', 'ky_kkdy', 'ky_kxly',	'ky_kbky',	'ky_kbyy',	'ky_kbdy',	'ky_byy', 'ky_ysd', 'ky_yszq',
-                   'ky_yrjt', 'ky_xly', 'ky_xry',	 'wnsnzz_syjt', 'wnsnzz_ys', 'wnsnzz_jbzs', 'wnsnzz_ss',
+                   'wr_sbr', 'wr_yrzl', 'weh_zih', 'weh_daoh', 'weh_dah', 'weh_duh', 'weh_hs', 'weh_hb', 'weh_hc',
+                   'weh_lh', 'weh_rh', 'weh_hh', 'weh_yh', 'weh_hzy', 'weh_jh', 'weh_zh', 'weh_sjhc', 'weh_xhhc',
+                   'weh_eh', 'weh_th', 'weh_xh', 'weh_sh', 'weh_szxh', 'weh_hrhc', 'ky_kg', 'ky_fk', 'ky_kkyy',
+                   'ky_kxry', 'ky_kkdy', 'ky_kxly', 'ky_kbky', 'ky_kbyy', 'ky_kbdy', 'ky_byy', 'ky_ysd', 'ky_yszq',
+                   'ky_yrjt', 'ky_xly', 'ky_xry', 'wnsnzz_syjt', 'wnsnzz_ys', 'wnsnzz_jbzs', 'wnsnzz_ss',
                    'wnsnzz_ysgd', 'wnsnzz_xgsj', 'wnsnzz_ewsc', 'wnsnzz_yes', 'wnkwzz_kd', 'wnkwzz_kt', 'wnkwzz_knn',
                    'wnkwzz_ks', 'wnkwzz_kk', 'wnkwzz_kse', 'wnkwzz_kxian', 'wnkwzz_kxiang', 'wnkwzz_kxin', 'wnkwzz_ynw',
-                   'wnkwzz_kqzc', 'yfys', 'yfys_yl',	'yfys_qt', 'yfys_ll', 'yfys_ls', 'yfys_sj',	'yfys_yj',
-                   'ysps_psfg', 'ysps_psxl'	, 'ysps_pssl', 'ysps_xrs', 'ysps_xsyw', 'xl_dxxl', 'xl_ssxxdgs', 'xl_xfpd',
+                   'wnkwzz_kqzc', 'yfys', 'yfys_yl', 'yfys_qt', 'yfys_ll', 'yfys_ls', 'yfys_sj', 'yfys_yj',
+                   'ysps_psfg', 'ysps_psxl', 'ysps_pssl', 'ysps_xrs', 'ysps_xsyw', 'xl_dxxl', 'xl_ssxxdgs', 'xl_xfpd',
                    'xl_fsjjxybxl', 'xl_xfcd', 'xl_sxxdgs', 'xdtqqss_fxqqss', 'xdtqqss_fsjjxqqss', 'xdtqqss_sxqqass',
                    'xdtcdzz_1dfscdzz', 'xdtcdzz_2d1xfscdzz', 'xdtcdzz_2d2xfscdzz', 'xdtcdzz_3dfscdzz', 'kxxbyw_aspl',
-                   'kxxbyw_lbgl', 'kxxbyw_plgl', 'kxxbyw_tgrl', 'ttlyw', 'acei', 'arb',  'bstzzj', 'ccb', 'xszlyw',
+                   'kxxbyw_lbgl', 'kxxbyw_plgl', 'kxxbyw_tgrl', 'ttlyw', 'acei', 'arb', 'bstzzj', 'ccb', 'xszlyw',
                    'lnj', 'lnj_fsm', 'lnj_bmtn', 'lnj_tlsm', 'lnj_bfsq', 'lnj_lst', 'lnj_ydpa', 'lnj_mtlz', 'lnj_abdd',
                    'lnj_tfpt', 'lnj_qlsq', 'qgtstjkj', 'qtkxjqxyw_qmtq', 'qtkxjqxyw_nkde', 'knyw', 'sm', 'sm_byrm',
                    'sm_bm', 'sm_bnw', 'sm_mebm', 'sm_dm', 'sm_yx', 'sm_xhbnzm', 'sm_smsx', 'sm_ywba', 'sm_ss',
-                   'sm_shkd', 'sm_hm', 'sm_smdc', 'sm_myz',	'sm_my', 'nl_dn', 'nl_sn', 'nl_wn', 'nc_np', 'nc_ynd',
+                   'sm_shkd', 'sm_hm', 'sm_smdc', 'sm_myz', 'sm_my', 'nl_dn', 'nl_sn', 'nl_wn', 'nc_np', 'nc_ynd',
                    'nc_yn', 'nc_nzl', 'ng_xbct', 'ng_xbzr', 'ng_xbbl', 'ng_xbbt', 'ng_xbwl', 'ng_xbsj', 'ng_xbxshd',
                    'ng_xbzd', 'ng_nj', 'ng_ns', 'ng_nt', 'ng_nhyl', 'nz_xbdh', 'nz_xbds', 'nz_xbq', 'nz_xbqc',
                    'nz_xbypm', 'nz_xbjj', 'nz_xbhz', 'nz_nc', 'nz_nzss', 'nz_nx', 'bc_bm', 'bc_xx', 'bc_stxx', 'bc_wgx',
@@ -11464,7 +11283,7 @@ def update_gxb():
                    'zwxgb_sgxdmzyyh', 'zwxgb_sdmzyyh', 'zwxgb_sjmxsxc', ' zwxgb_xzjmqz', 'nxgb_ngshyz', 'nxgb_dzxnqxfz',
                    'nxgb_ncxhyz', 'xzbmb_ejbgbbq', 'xzbmb_sjbgbbq', 'xzbmb_zdmbxz', 'xzbmb_zdmbgbbq', 'xzbmb_ejbxz',
                    'xzbmb_ejbtc', 'xzbmb_fdmbxz', 'xzbmb_fdmbgbbq', 'xzbmb_xzbmzhsh', 'wh', 'wr', 'weh', 'ky', 'wnsnzz',
-                   'wnkwzz', 'ysps', 'wgzz', 'tbzz', 'xxbxzz', 'hxzz', 'ktzz',  'fbzz', 'ztzz', 'qzzz', 'mmzz', 'fzzz',
+                   'wnkwzz', 'ysps', 'wgzz', 'tbzz', 'xxbxzz', 'hxzz', 'ktzz', 'fbzz', 'ztzz', 'qzzz', 'mmzz', 'fzzz',
                    'qtbs', 'xl', 'xdtqqss', 'gxb', 'xgnbq', 'xlsc', 'gxyb', 'gxzz', 'tnbbfz', 'mxsgnbq', 'zwxgb',
                    'xzbmb', 'qx', 'qx_jzyn', 'qx_sb', 'qx_sj', 'qx_sk', 'qx_sy', 'qx_sys', 'qx_zb', 'qx_yy', 'xzcszd',
                    'xzcszd_sbl', 'xzcszd_fbxs', 'xzcszd_ejbxz', 'xzcszd_ejbgbbq', 'xzcszd_ejbtc', 'xzcszd_sjbgbbq',
@@ -11492,38 +11311,295 @@ def update_gxb():
     cur.close()
     conn.close()
 
-# def update_gxb_condition():
-#     conn = get_conn()
-#     cur = conn.cursor()
-#
-#     # qtyw其他药物（只要该患者西药用药部分有一项不为空，则空值可按0处理）
-#     cur.execute('SELECT ID, qtyw_dgx, qtyw_yfbld FROM record_gxb2;')
-#     qtyw_data = cur.fetchall()
-#     for qtyw in qtyw_data:
-#         if 1 in qtyw:
-#             try:
-#                 cur.execute(
-#                     'UPDATE record_gxb2 SET qtyw = %s WHERE ID = %s;', (1, qtyw[0]))
-#                 conn.commit()
-#             except Exception as ex:
-#                 logging.error('[更新异常]' + str(ex))
-#                 conn.rollback()
-#                 break
-#
-#     cur.close()
-#     conn.close()
 
+def gxb_to_common():
+    conn = get_conn()
+    cur = conn.cursor()
+
+    cur.execute('SELECT COMMON_ID, sm_byrm, sm_yx, sm_dm, sm_ss, sm_hm, ng_nt, bg_dbg, bz_dbsy, bz_dbbs, bz_dbzn, '
+                'bz_wgbh, bz_tjbt, bg_gmzr, bg_ljhz, bg_pbbs, gxyb, gxzz, extnb, zwxgb, sx_cl, sx_jn, sx_pd, sx_sb, '
+                'sx_dc, sx_lw, sx_bych, ss_dh, ss_db, ss_hos, ss_js, ss_qz, tz_b, tz_ho, tz_r, tz_z, tz_n, tz_f, tz_bt'
+                ' FROM record_gxb2;')
+    gxb_data = cur.fetchall()
+    for gxb in gxb_data:
+        try:
+            cur.execute('UPDATE record_common2 SET sm_rskn = %s WHERE ID = %s;', (gxb[1], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET sm_yx = %s WHERE ID = %s;', (gxb[2], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET sm_dm = %s WHERE ID = %s;', (gxb[3], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET sm_ss = %s WHERE ID = %s;', (gxb[4], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET sm_hz = %s WHERE ID = %s;', (gxb[5], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET xb_tt = %s WHERE ID = %s;', (gxb[6], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET db_zdgy = %s WHERE ID = %s;', (gxb[7], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET db_zdxsy = %s WHERE ID = %s;', (gxb[8], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET db_zdzrbcx = %s WHERE ID = %s;', (gxb[9], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET db_zdnnbs = %s WHERE ID = %s;', (gxb[10], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET db_zdwgbh = %s WHERE ID = %s;', (gxb[11], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET db_zdtjbt = %s WHERE ID = %s;', (gxb[12], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET db_bggmzr = %s WHERE ID = %s;', (gxb[13], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET db_bgljhz = %s WHERE ID = %s;', (gxb[14], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET db_bgpbbs = %s WHERE ID = %s;', (gxb[15], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET gxy_bs = %s WHERE ID = %s;', (gxb[16], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET gxz_bs = %s WHERE ID = %s;', (gxb[17], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET tnb_bs = %s WHERE ID = %s;', (gxb[18], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET zwxgb_bs = %s WHERE ID = %s;', (gxb[19], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET sx_ls = %s WHERE ID = %s;', (gxb[20], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET sx_ns = %s WHERE ID = %s;', (gxb[21], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET sx_pds = %s WHERE ID = %s;', (gxb[22], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET sx_sxs = %s WHERE ID = %s;', (gxb[23], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET sx_dcs = %s WHERE ID = %s;', (gxb[24], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET sx_lws = %s WHERE ID = %s;', (gxb[25], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET sx_chs = %s WHERE ID = %s;', (gxb[26], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET ss_dhs = %s WHERE ID = %s;', (gxb[27], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET ss_dbs = %s WHERE ID = %s;', (gxb[28], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET ss_hs = %s WHERE ID = %s;', (gxb[29], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET ss_js = %s WHERE ID = %s;', (gxb[30], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET ss_qzs = %s WHERE ID = %s;', (gxb[31], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET tz_bot = %s WHERE ID = %s;', (gxb[32], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET tz_ht = %s WHERE ID = %s;', (gxb[33], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET tz_rt = %s WHERE ID = %s;', (gxb[34], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET tz_zt = %s WHERE ID = %s;', (gxb[35], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET tz_nt = %s WHERE ID = %s;', (gxb[36], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET tz_ft = %s WHERE ID = %s;', (gxb[37], gxb[0]))
+            conn.commit()
+            cur.execute('UPDATE record_common2 SET tz_bat = %s WHERE ID = %s;', (gxb[38], gxb[0]))
+            conn.commit()
+        except Exception as ex:
+            logging.error('[更新异常]' + str(ex))
+            conn.rollback()
+            break
+
+    cur.close()
+    conn.close()
+
+
+def clean_common():
+    conn = get_conn()
+    cur = conn.cursor()
+
+    # shent神态是否异常
+    cur.execute('SELECT ID, st_fz, st_hh, st_ss, st_hm, st_zw, st_dm FROM record_common2;')
+    shent_data = cur.fetchall()
+    for shent in shent_data:
+        if 1 in shent:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET shent = %s WHERE ID = %s;', (1, shent[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    # qx情绪是否异常
+    cur.execute('SELECT ID, qx_jz, qx_yn, qx_xf, qx_dsdl FROM record_common2;')
+    qx_data = cur.fetchall()
+    for qx in qx_data:
+        if 1 in qx:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET qx = %s WHERE ID = %s;', (1, qx[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    # sm睡眠是否异常
+    cur.execute('SELECT ID, sm_rskn, sm_yx, sm_dm, sm_ss, sm_hz FROM record_common2;')
+    sm_data = cur.fetchall()
+    for sm in sm_data:
+        if 1 in sm:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET sm = %s WHERE ID = %s;', (1, sm[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    # xb小便是否异常
+    cur.execute('SELECT ID, xb_cs, xb_ys, xb_dx, xb_tt FROM record_common2;')
+    xb_data = cur.fetchall()
+    for xb in xb_data:
+        if 1 in xb:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET xb = %s WHERE ID = %s;', (1, xb[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    # db大便是否异常
+    cur.execute(
+        'SELECT ID, db_ys, db_zdgy, db_zdxsy, db_zdzrbcx, db_zdnnbs, db_zdwgbh, db_zdtjbt, db_zdjyny, db_bggmzr, '
+        'db_bgljhz, db_bgpbbs, db_bgjpyb FROM record_common2;')
+    db_data = cur.fetchall()
+    for db in db_data:
+        if 1 in db:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET db = %s WHERE ID = %s;', (1, db[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    # sx舌形是否异常
+    cur.execute('SELECT ID, sx_ls, sx_ns, sx_pds, sx_sxs, sx_dcs, sx_lws, sx_chs FROM record_common2;')
+    sx_data = cur.fetchall()
+    for sx in sx_data:
+        if 1 in sx:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET sx = %s WHERE ID = %s;', (1, sx[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    # ms面色是否异常
+    cur.execute('SELECT ID, ms_cs, ms_bs, ms_hus, ms_qs, ms_hes FROM record_common2;')
+    ms_data = cur.fetchall()
+    for ms in ms_data:
+        if 1 in ms:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET ms = %s WHERE ID = %s;', (1, ms[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    # wgbj五官白睛是否异常
+    cur.execute('SELECT ID, wgbj_mc, wgbj_mh, wgbj_bjzz, wgbj_bjwz, wgbj_bjjj, wgbj_mzjq FROM record_common2;')
+    wgbj_data = cur.fetchall()
+    for wgbj in wgbj_data:
+        if 1 in wgbj:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET wgbj = %s WHERE ID = %s;', (1, wgbj[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    # wghj五官黑睛是否异常
+    cur.execute('SELECT ID, wghj_hjhz, wghj_hjcc, wghj_hjsy, wghj_hjsb, wghj_hjsh FROM record_common2;')
+    wghj_data = cur.fetchall()
+    for wghj in wghj_data:
+        if 1 in wghj:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET wghj = %s WHERE ID = %s;', (1, wghj[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    # wgmz五官目眦是否异常
+    cur.execute('SELECT ID, wgmz_mzdb, wgmz_mzhz, wgmz_mzkl FROM record_common2;')
+    wgmz_data = cur.fetchall()
+    for wgmz in wgmz_data:
+        if 1 in wgmz:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET wgmz = %s WHERE ID = %s;', (1, wgmz[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    # wgyj五官眼睑是否异常
+    cur.execute('SELECT ID, wgyj_yjcx, wgyj_yjfz, wgyj_yjsd, wgyj_yjxc, wgyj_bjhz, wgyj_bjkp, wgyj_bjqz, wgyj_jysl '
+                'FROM record_common2;')
+    wgyj_data = cur.fetchall()
+    for wgyj in wgyj_data:
+        if 1 in wgyj:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET wgyj = %s WHERE ID = %s;', (1, wgyj[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    # wgkc五官口唇是否异常
+    cur.execute('SELECT ID, wgkc_yyza, wgkc_kcsa, wgkc_kccl, wgkc_kchz, wgkc_kcdb, wgkc_kccd, wgkc_csqz, wgkc_cssa,  '
+                'wgkc_kzsc, wgkc_kqcl, wgkc_kjjl, wgkc_kjhz, wgkc_kywx FROM record_common2;')
+    wgkc_data = cur.fetchall()
+    for wgkc in wgkc_data:
+        if 1 in wgkc:
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET wgkc = %s WHERE ID = %s;', (1, wgkc[0]))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                break
+
+    cur.close()
+    conn.close()
 
 if __name__ == '__main__':
     # 数据移植
     print('------------------------ 1.数据移植 ----------------------------------')
     transplant()
-    # common表数据清洗
-    print('--------------------- 2.common表数据清洗 ------------------------------')
-    clean_common()
     # gxy表数据清洗
-    print('---------------------- 3.gxy表数据清洗 --------------------------------')
+    print('---------------------- 2.gxy表数据清洗 --------------------------------')
     clean_gxb()
-    # gxy表数据清洗
-    print('---------------------- 4.gxy表数据补全 --------------------------------')
+    # gxy表数据补全
+    print('---------------------- 3.gxy表数据补全 --------------------------------')
     update_gxb()
+    # common表数据补全(Copy gxb)
+    print('----------------- 4.common表数据补全(Copy gxb) ------------------------')
+    gxb_to_common()
+    # common表数据清洗
+    print('--------------------- 5.common表数据清洗 ------------------------------')
+    clean_common()
