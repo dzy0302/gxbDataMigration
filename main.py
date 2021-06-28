@@ -11587,6 +11587,26 @@ def clean_common():
     cur.close()
     conn.close()
 
+
+def update_common():
+    update_args = ['sm', 'sx', 'ms']
+
+    conn = get_conn()
+    cur = conn.cursor()
+
+    for arg in update_args:
+        sql = "update record_common2 set " + arg + " = 0 where " + arg + " is null"
+        try:
+            cur.execute(sql)
+            conn.commit()
+        except Exception as ex:
+            logging.error('字段：' + arg + '[更新异常]' + str(ex))
+            conn.rollback()
+
+    cur.close()
+    conn.close()
+
+
 if __name__ == '__main__':
     # 数据移植
     print('------------------------ 1.数据移植 ----------------------------------')
@@ -11603,3 +11623,6 @@ if __name__ == '__main__':
     # common表数据清洗
     print('--------------------- 5.common表数据清洗 ------------------------------')
     clean_common()
+    # common表数据补全
+    print('--------------------- 6.common表数据补全 ------------------------------')
+    update_common()
