@@ -6478,7 +6478,16 @@ def transplant():
                 conn.rollback()
                 if error_stop:
                     break
-        # 血小板计数（PLT）： ？
+        if orgin[12] == '血小板计数（PLT）：':
+            try:
+                cur.execute(
+                    'UPDATE record_common2 SET xxb_js = %s WHERE ID = %s;', (orgin[14], table_common_id))
+                conn.commit()
+            except Exception as ex:
+                logging.error('[更新异常]' + str(ex))
+                conn.rollback()
+                if error_stop:
+                    break
         # 血糖
         if orgin[12] == '空腹血糖（GLU）：':
             try:
@@ -7771,7 +7780,7 @@ def transplant():
                     conn.rollback()
                     if error_stop:
                         break
-        if orgin[12] == 'LCX_中段:':
+        if orgin[12] == 'LCX_中段：':
             if orgin[14] == 'LCX_中段：无':
                 try:
                     cur.execute(
