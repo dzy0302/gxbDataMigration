@@ -11265,7 +11265,7 @@ def update_gxb():
                    'fzzz_swz', 'fzzz_ymfz', 'fzzz_shzfz', 'fzzz_sizfz', 'fzzz_xzfz', 'fzzz_yyxzs', 'qtbs_gjyc',
                    'qtbs_hzyw', 'qtbs_yht', 'qtbs_yy', 'qtbs_ygm', 'qtbs_th', 'qtbs_qz', 'qtbs_sz', 'qtbs_fl',
                    'qtbs_jdly', 'qtbs_jw', 'qtbs_shenz', 'qtbs_zst', 'qtbs_srtz', 'qtbs_jsjd', 'qtbs_ys', 'qtbs_xr',
-                   'gmcta_lmtb', 'gmcta_lmwb', 'gmcta_ladjd', 'gmcta_ladzd', 'gmcta_ladyd', 'gmcta_lcxjd',
+                   'gmcta_lmtb', 'gmcta_lmwb', 'gmcta_ladjd', 'gmcta_ladzd', 'gmcta_ladyd', 'gmcta_lcxjd', 'gmcta_lcxzd'
                    'gmcta_lcxyd', 'gmcta_rcajd', 'gmcta_rcazd', 'gmcta_rcayd', 'gmcta_d1hzzzjd', 'gmcta_d1hzzzyd',
                    'gmcta_qtfzzzxzwz', 'gmzy_lmzjs', 'gmzy_lmzjnzxz', 'gmzy_ladzjs', 'gmzy_ladzjnzxz', 'gmzy_lcxzjs',
                    'gmzy_lcxzjnzxz', 'gmzy_rcazjs', 'gmzy_rcazjnzxz', 'gmzy_d1zjs', 'gmzy_d1hzjzjnzxz',
