@@ -11422,7 +11422,7 @@ def clean_common():
     cur = conn.cursor()
 
     # shent神态是否异常
-    cur.execute('SELECT ID, st_fz, st_hh, st_ss, st_hm, st_zw, st_dm FROM record_common2;')
+    cur.execute('SELECT ID, st_fz, st_hh, st_ss, st_hm, st_zw, st_dm FROM record_common2 WHERE SUBJECT_ID = 102 and yljg_bh = 191;')
     shent_data = cur.fetchall()
     for shent in shent_data:
         if 1 in shent:
@@ -11436,7 +11436,7 @@ def clean_common():
                 break
 
     # qx情绪是否异常
-    cur.execute('SELECT ID, qx_jz, qx_yn, qx_xf, qx_dsdl FROM record_common2;')
+    cur.execute('SELECT ID, qx_jz, qx_yn, qx_xf, qx_dsdl FROM record_common2 WHERE SUBJECT_ID = 102 and yljg_bh = 191;')
     qx_data = cur.fetchall()
     for qx in qx_data:
         if 1 in qx:
@@ -11450,7 +11450,7 @@ def clean_common():
                 break
 
     # sm睡眠是否异常
-    cur.execute('SELECT ID, sm_rskn, sm_yx, sm_dm, sm_ss, sm_hz FROM record_common2;')
+    cur.execute('SELECT ID, sm_rskn, sm_yx, sm_dm, sm_ss, sm_hz FROM record_common2 WHERE SUBJECT_ID = 102 and yljg_bh = 191;')
     sm_data = cur.fetchall()
     for sm in sm_data:
         if 1 in sm:
@@ -11464,7 +11464,7 @@ def clean_common():
                 break
 
     # xb小便是否异常
-    cur.execute('SELECT ID, xb_cs, xb_ys, xb_dx, xb_tt FROM record_common2;')
+    cur.execute('SELECT ID, xb_cs, xb_ys, xb_dx, xb_tt FROM record_common2 WHERE SUBJECT_ID = 102 and yljg_bh = 191;')
     xb_data = cur.fetchall()
     for xb in xb_data:
         if 1 in xb:
@@ -11480,7 +11480,7 @@ def clean_common():
     # db大便是否异常
     cur.execute(
         'SELECT ID, db_ys, db_zdgy, db_zdxsy, db_zdzrbcx, db_zdnnbs, db_zdwgbh, db_zdtjbt, db_zdjyny, db_bggmzr, '
-        'db_bgljhz, db_bgpbbs, db_bgjpyb FROM record_common2;')
+        'db_bgljhz, db_bgpbbs, db_bgjpyb FROM record_common2 WHERE SUBJECT_ID = 102 and yljg_bh = 191;')
     db_data = cur.fetchall()
     for db in db_data:
         if 1 in db:
@@ -11494,7 +11494,7 @@ def clean_common():
                 break
 
     # sx舌形是否异常
-    cur.execute('SELECT ID, sx_ls, sx_ns, sx_pds, sx_sxs, sx_dcs, sx_lws, sx_chs FROM record_common2;')
+    cur.execute('SELECT ID, sx_ls, sx_ns, sx_pds, sx_sxs, sx_dcs, sx_lws, sx_chs FROM record_common2 WHERE SUBJECT_ID = 102 and yljg_bh = 191;')
     sx_data = cur.fetchall()
     for sx in sx_data:
         if 1 in sx:
@@ -11508,7 +11508,7 @@ def clean_common():
                 break
 
     # ms面色是否异常
-    cur.execute('SELECT ID, ms_cs, ms_bs, ms_hus, ms_qs, ms_hes FROM record_common2;')
+    cur.execute('SELECT ID, ms_cs, ms_bs, ms_hus, ms_qs, ms_hes FROM record_common2 WHERE SUBJECT_ID = 102 and yljg_bh = 191;')
     ms_data = cur.fetchall()
     for ms in ms_data:
         if 1 in ms:
@@ -11522,7 +11522,7 @@ def clean_common():
                 break
 
     # wgbj五官白睛是否异常
-    cur.execute('SELECT ID, wgbj_mc, wgbj_mh, wgbj_bjzz, wgbj_bjwz, wgbj_bjjj, wgbj_mzjq FROM record_common2;')
+    cur.execute('SELECT ID, wgbj_mc, wgbj_mh, wgbj_bjzz, wgbj_bjwz, wgbj_bjjj, wgbj_mzjq FROM record_common2 WHERE SUBJECT_ID = 102 and yljg_bh = 191;')
     wgbj_data = cur.fetchall()
     for wgbj in wgbj_data:
         if 1 in wgbj:
@@ -11536,7 +11536,7 @@ def clean_common():
                 break
 
     # wghj五官黑睛是否异常
-    cur.execute('SELECT ID, wghj_hjhz, wghj_hjcc, wghj_hjsy, wghj_hjsb, wghj_hjsh FROM record_common2;')
+    cur.execute('SELECT ID, wghj_hjhz, wghj_hjcc, wghj_hjsy, wghj_hjsb, wghj_hjsh FROM record_common2 WHERE SUBJECT_ID = 102 and yljg_bh = 191;')
     wghj_data = cur.fetchall()
     for wghj in wghj_data:
         if 1 in wghj:
@@ -11550,7 +11550,7 @@ def clean_common():
                 break
 
     # wgmz五官目眦是否异常
-    cur.execute('SELECT ID, wgmz_mzdb, wgmz_mzhz, wgmz_mzkl FROM record_common2;')
+    cur.execute('SELECT ID, wgmz_mzdb, wgmz_mzhz, wgmz_mzkl FROM record_common2 WHERE SUBJECT_ID = 102 and yljg_bh = 191;')
     wgmz_data = cur.fetchall()
     for wgmz in wgmz_data:
         if 1 in wgmz:
@@ -11565,7 +11565,7 @@ def clean_common():
 
     # wgyj五官眼睑是否异常
     cur.execute('SELECT ID, wgyj_yjcx, wgyj_yjfz, wgyj_yjsd, wgyj_yjxc, wgyj_bjhz, wgyj_bjkp, wgyj_bjqz, wgyj_jysl '
-                'FROM record_common2;')
+                'FROM record_common2 WHERE SUBJECT_ID = 102 and yljg_bh = 191;')
     wgyj_data = cur.fetchall()
     for wgyj in wgyj_data:
         if 1 in wgyj:
@@ -11580,7 +11580,7 @@ def clean_common():
 
     # wgkc五官口唇是否异常
     cur.execute('SELECT ID, wgkc_yyza, wgkc_kcsa, wgkc_kccl, wgkc_kchz, wgkc_kcdb, wgkc_kccd, wgkc_csqz, wgkc_cssa,  '
-                'wgkc_kzsc, wgkc_kqcl, wgkc_kjjl, wgkc_kjhz, wgkc_kywx FROM record_common2;')
+                'wgkc_kzsc, wgkc_kqcl, wgkc_kjjl, wgkc_kjhz, wgkc_kywx FROM record_common2 WHERE SUBJECT_ID = 102 and yljg_bh = 191;')
     wgkc_data = cur.fetchall()
     for wgkc in wgkc_data:
         if 1 in wgkc:
@@ -11604,7 +11604,7 @@ def update_common():
     cur = conn.cursor()
 
     for arg in update_args:
-        sql = "update record_common2 set " + arg + " = 0 where " + arg + " is null"
+        sql = "update record_common2 set " + arg + " = 0 where " + arg + " is null and SUBJECT_ID = 102 and yljg_bh = 191;"
         try:
             cur.execute(sql)
             conn.commit()
